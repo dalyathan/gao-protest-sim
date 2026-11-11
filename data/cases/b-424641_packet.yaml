@@ -66,9 +66,14 @@ documents:
 
 parameters:
   V_contract_per_seat: 40000000
+  profit_margin: 0.10
+  P_win_recompete: 0.27
   incumbent: 0
+  incumbent_daily_margin: 5000
   stay_days_expected: 100
   protester_legal_cost: 250000
+  legal_cost_early: 60000
+  relationship_cost: 40000
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000

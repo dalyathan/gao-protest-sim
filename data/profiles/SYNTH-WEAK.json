@@ -1,0 +1,8 @@
+{
+  "counsel_p_relief_t1": 0.12,
+  "agency_p_sustain_any": 0.08,
+  "counsel_p_relief_t3": 0.08,
+  "true_p_sustain": 0.08,
+  "params_from": "B-424641",
+  "source": "SYNTHETIC weak-merits profile for testing that the RL layer learns state-dependent play. Not real data."
+}
