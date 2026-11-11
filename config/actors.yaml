@@ -1,0 +1,97 @@
+# Actor definitions: objectives, allowed moves, visibility, scorecard parameters.
+# Parameter values marked `assumed` are ranges for sensitivity analysis or fitting.
+
+actors:
+  protester_co:
+    description: Protester company (business decision-maker)
+    moves_by_turn:
+      1: [file, do_not_file]
+      3: [continue, cut_budget, withdraw]
+      4: [continue, withdraw]
+    visibility: [public, debrief, filed_redacted, private_protester_co]
+    receives_from: {protester_counsel: non_specific_advice}
+    scorecard:
+      formula: "P_relief*V_contract*P_win_recompete + incumbent*stay_days*daily_margin - legal_cost - relationship_cost"
+      params:
+        V_contract: {source: decision_or_usaspending}
+        P_win_recompete: {source: n_offerors_and_base_rates}
+        incumbent: {source: award_history}
+        stay_days: {source: gao_docket}
+        daily_margin: {assumed: [0.05, 0.15], unit: "fraction of daily contract value"}
+        legal_cost: {assumed: [50000, 500000], unit: USD}
+        relationship_cost: {assumed: [0, 250000], unit: USD}
+
+  protester_counsel:
+    description: Protester outside counsel (admitted under protective order)
+    moves_by_turn:
+      1: [draft_grounds]
+      3: [file_supplemental_grounds, no_supplemental, request_documents, request_hearing]
+      4: [respond, request_hearing]
+    visibility: [public, debrief, filed_redacted, apo, private_protester_counsel]
+    constraints:
+      - "May not disclose protected (apo) details to protester_co"
+      - "May cite only facts in the record and real precedent"
+    scorecard:
+      formula: "client_U + w_rep*credibility"
+      params:
+        w_rep: {assumed: [0.1, 0.5]}
+
+  agency:
+    description: Contracting officer + agency counsel
+    moves_by_turn:
+      1: [proceed_under_stay, override_stay]
+      2: [defend, corrective_action]
+      4: [defend, corrective_action]
+    visibility: [public, debrief, filed_redacted, apo, agency_internal, private_agency]
+    scorecard:
+      formula: "-delay_cost_per_day*stay_days - P_sustain*(public_loss + cost_reimbursement) - corrective_action_cost*took_CA"
+      params:
+        delay_cost_per_day: {assumed: [1000, 50000], unit: USD}
+        public_loss: {assumed: [50000, 1000000], unit: USD-equivalent}
+        cost_reimbursement: {assumed: [50000, 500000], unit: USD}
+        corrective_action_cost: {assumed: [20000, 300000], unit: USD}
+
+  intervenor:
+    description: Awardee (optional; absent in pre-award protests)
+    optional: true
+    moves_by_turn:
+      1: [intervene, stay_out]
+      3: [argue, no_filing]
+    visibility: [public, filed_redacted, apo, private_intervenor]
+    scorecard:
+      formula: "P_keep_award*V_contract - legal_cost"
+      params:
+        legal_cost: {assumed: [30000, 300000], unit: USD}
+
+  gao:
+    description: GAO attorney (adjudicator; not self-interested)
+    moves_by_turn:
+      4: [request_info, hold_hearing, outcome_prediction_adr, none]
+      5: [rule_per_ground]
+    visibility: [public, filed_redacted, apo]
+    scorecard:
+      formula: "consistency_with_law_and_precedent (scored against real outcome)"
+
+visibility_tags:
+  public: "Solicitation, published GAO decisions"
+  debrief: "Own evaluation, awardee name, sometimes price/overall ratings"
+  filed_redacted: "Public versions of filings"
+  apo: "Protected record (awardee proposal, full evaluation); available from turn 2"
+  agency_internal: "Deliberations, true record quality"
+
+outcomes: [denied, sustained, sustained_in_part, dismissed, corrective_action, withdrawn]
+
+experiments:
+  levers: [A_role_only, B_scorecard, C_hidden_info, D_action_space, E_referee, F_repeated_feedback, G_variation]
+  scorecard_variants: [risk_neutral, risk_averse, myopic, reputation_aware, fee_current, fee_loser_pays, fee_none]
+  info_scenarios: [realistic, full_transparency, no_apo_access, thin_debrief, thorough_debrief]
+  incentive_swap_tests:
+    - {change: "protester_co.incumbent: 0 -> 1, daily_margin high", expect: "more filings on weaker grounds"}
+    - {change: "agency.delay_cost_per_day high", expect: "earlier corrective action"}
+  metrics: [accuracy_vs_actual, accuracy_vs_base_rate, incentive_sensitivity, distance_from_benchmark, behavioral_diversity, tokens_per_sim]
+
+observer:
+  default_mode: scientist
+  modes: [scientist, advisor, designer]
+  leakage_rule: "Real outcomes never enter agent context or rewards; used only for scoring"
+  time_split: {calibrate_before: "2026-01-01", test_after: "2026-07-01"}

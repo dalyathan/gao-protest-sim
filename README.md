@@ -35,6 +35,7 @@ have seen them in training.
 ## Roadmap
 
 1. [x] Repo + data fetcher + blinding step
+1b. [x] Game design (GAME_DESIGN.md) + actor config (config/actors.yaml)
 2. [ ] Agent simulation: protester counsel, agency counsel, intervenor, GAO attorney
 3. [ ] Backtest: accuracy vs. actual outcomes and vs. a base-rate baseline
 4. [ ] Demo page: case picker, agent debate, prediction vs. actual, scoreboard
