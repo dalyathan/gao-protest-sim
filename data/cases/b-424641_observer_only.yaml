@@ -1,0 +1,15 @@
+# OBSERVER ONLY — never shown to agents.
+case_id: B-424641
+actual:
+  filed: 2026-07-13
+  decided: 2026-10-16
+  corrective_action: false
+  intervenor: none
+  outcome: sustained_in_part
+  grounds:
+    dbb_unstated_criterion: sustained
+    historic_preservation: denied
+    professional_qualifications_matrix: denied
+    past_performance_disparate_treatment: denied
+    capacity_rating: denied
+  remedy: "Reevaluate experience criterion; new ranking; reimburse protest costs incl. attorneys' fees"
