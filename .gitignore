@@ -3,3 +3,4 @@ data/raw/
 __pycache__/
 runs/*.json
 !runs/rl_policy.json
+.env

@@ -19,6 +19,19 @@ from pathlib import Path
 
 import yaml
 
+
+def load_dotenv(path=Path(__file__).parent / ".env"):
+    """Load KEY=VALUE lines from .env (git-ignored) into the environment."""
+    import os
+    if path.exists():
+        for line in path.read_text().splitlines():
+            if "=" in line and not line.lstrip().startswith("#"):
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip().strip('"'))
+
+
+load_dotenv()
+
 from sim.benchmark import benchmark_choice
 from sim.case import Case
 from sim.game import Game, p_any, save, score
