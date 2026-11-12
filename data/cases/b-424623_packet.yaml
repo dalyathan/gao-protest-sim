@@ -1,0 +1,94 @@
+case_id: B-424623
+documents:
+- id: solicitation_and_background
+  tag: public
+  text: 'Agency: Department of Homeland Security, U.S. Citizenship and Immigration Services (USCIS)
+
+    Solicitation: RFQ No. 70SBUR26Q00000052 (PLANXS II)
+
+    Type: Task order for IT support services under FAR subpart 8.4, issued as a total small business set-aside to
+    GSA MAS 54151S holders
+
+    Value: Not stated; evaluated prices were $88,090,259 (AEX) and $100,598,462 (Octo)
+
+    Evaluation: Best-value tradeoff between price and non-price factors: code challenge (most important) and corporate
+    experience
+
+    Offerors: 6
+
+    Protest type: post-award
+
+
+    On March 16, 2026, USCIS issued the RFQ under FAR subpart 8.4 as a total small business set-aside to holders
+    of GSA MAS 54151S contracts. The solicitation contemplated a single fixed-price task order for IT services supporting
+    USCIS''s mission, including design, development, and maintenance of the current technological solution. Selection
+    was a best-value tradeoff between price and two non-price factors, code challenge and corporate experience,
+    with non-price factors described as significantly more important than price. The code challenge included a take-home
+    portion and a live demonstration in which vendors implemented new requirements during a three-hour period, conducted
+    via Microsoft Teams and recorded. Vendors were required to use Databricks, but the solicitation did not require
+    Terraform. Six vendors submitted quotations on March 31, 2026. The agency rated AEX high confidence under code
+    challenge and some confidence under corporate experience, with a price of $88,090,259, while rating Octo some
+    confidence under code challenge and high confidence under corporate experience, with a price of $100,598,462.
+    The agency issued the task order to AEX on June 22, 2026, and Octo, the incumbent, protested.'
+- id: protester_view
+  tag: debrief
+  text: 'Protester: Octo Metric, LLC (incumbent: True). Awardee: AEX Digital, LLC. Issues the protester has identified:
+
+    g1: Octo contends the agency unreasonably faulted it for not deploying all new code challenge requirements to
+    production, arguing that Terraform and Databricks software updates were beyond its control.
+
+    g2: Octo contends the agency unreasonably found weak program management and methodology, asserting its personnel
+    are highly trained and its response to the Databricks issue was nimble.
+
+    g3: Octo contends the agency unreasonably found its solution lacked cost-effective platform methods based on
+    high operational costs, arguing its required capabilities necessarily carry higher infrastructure costs.'
+- id: agency_internal
+  tag: agency_internal
+  text: 'Agency''s view of its record: The agency argues Octo conceded it did not deploy the new requirements to
+    production, and that Octo chose to use Terraform and was responsible for tracking changes affecting it. It states
+    the Databricks update affected all vendors, and that Octo spent over two hours resolving it. The agency also
+    contends the team''s interactions showed gaps in leadership and direction, and that Octo''s design choices prioritized
+    persistent operation without adequate cost controls.
+
+    Octo''s code challenge was rated some confidence, while AEX''s was rated high confidence. The agency identified
+    three aspects that decreased confidence in Octo''s quotation: not all new code challenge requirements were deployed
+    to production, weak program management and methodology, and high operational costs shown on Octo''s cost tracking
+    dashboard. During the live demonstration, Octo acknowledged it had not deployed anything to production and that
+    it spent about two hours on a Databricks update within the three-hour window. Octo''s corporate experience was
+    rated high confidence. Octo''s evaluated price was $100,598,462, compared with AEX''s $88,090,259.'
+- id: agency_report
+  tag: apo
+  available_from_turn: 2
+  text: 'Agency report (protected record): Octo''s code challenge was rated some confidence, while AEX''s was rated
+    high confidence. The agency identified three aspects that decreased confidence in Octo''s quotation: not all
+    new code challenge requirements were deployed to production, weak program management and methodology, and high
+    operational costs shown on Octo''s cost tracking dashboard. During the live demonstration, Octo acknowledged
+    it had not deployed anything to production and that it spent about two hours on a Databricks update within the
+    three-hour window. Octo''s corporate experience was rated high confidence. Octo''s evaluated price was $100,598,462,
+    compared with AEX''s $88,090,259.
+
+    Agency arguments: The agency argues Octo conceded it did not deploy the new requirements to production, and
+    that Octo chose to use Terraform and was responsible for tracking changes affecting it. It states the Databricks
+    update affected all vendors, and that Octo spent over two hours resolving it. The agency also contends the team''s
+    interactions showed gaps in leadership and direction, and that Octo''s design choices prioritized persistent
+    operation without adequate cost controls.'
+parameters:
+  profit_margin: 0.1
+  P_win_recompete: 0.2
+  incumbent_daily_margin: 5000
+  stay_days_expected: 100
+  protester_legal_cost: 250000
+  legal_cost_early: 60000
+  relationship_cost: 40000
+  agency_delay_cost_per_day: 10000
+  agency_public_loss: 300000
+  cost_reimbursement: 250000
+  corrective_action_cost: 100000
+  V_contract_per_seat: 100598462.0
+  incumbent: 1
+meta:
+  title: Octo Metric, LLC
+  intervenor_present: true
+  protest_type: post-award
+  source: extracted via web-reading tool
+  pre_cutoff: false

@@ -1,0 +1,103 @@
+case_id: B-424785
+documents:
+- id: solicitation_and_background
+  tag: public
+  text: 'Agency: Department of the Interior, National Park Service
+
+    Solicitation: RFQ No. 140P1326Q0029 (leaf removal services, Rock Creek National Park)
+
+    Type: Commercial services; small business set-aside under RFO part 12 procedures
+
+    Value: None
+
+    Evaluation: Lowest-priced technically acceptable quotation; price was the sole evaluation factor
+
+    Offerors: 16
+
+    Protest type: post-award
+
+
+    On June 26, 2026, NPS issued a small business set-aside RFQ for leaf removal services at Rock Creek National
+    Park under RFO part 12 commercial procedures. The RFQ contemplated a fixed-price purchase order with a one-year
+    base period, four one-year options, and a six-month extension option. Price was the sole evaluation factor,
+    and award was to go to the responsible vendor offering the lowest price. Vendors were to email quotations to
+    the contracting officer''s designated address by 12:00 p.m. Eastern Time on July 29, and the solicitation placed
+    responsibility for timely delivery on offerors. Casey states it emailed its quotation on July 23 and received
+    a delivery confirmation indicating the message reached a mail server. By the July 29 closing date, the contracting
+    officer had received 15 quotations, including Brann''s, but none from Casey. NPS selected Brann Services and
+    posted the award notice on SAM on August 11. That day Casey requested a debriefing and attached its quotation;
+    on August 12 the contracting officer stated he had no record of receiving a quotation from Casey and declined
+    to consider it. An internal IT investigation found that the July 23 email reached the agency''s email system,
+    was flagged as a high-confidence phishing message, and was quarantined without reaching the contracting officer''s
+    inbox. Casey filed an agency-level protest, which NPS denied on August 27, and then protested to GAO.'
+- id: protester_view
+  tag: debrief
+  text: 'Protester: Casey & Company LLC (incumbent: None). Awardee: Brann Services LLC. Issues the protester has
+    identified:
+
+    g1: The agency improperly refused to consider Casey''s quotation, which Casey contends was timely submitted
+    to the designated address and was received by the agency''s email server before the deadline.
+
+    g2: The agency knew its email system had previously quarantined legitimate quotations and unreasonably failed
+    to correct this known problem, so the quarantine reflects a systemic failure requiring consideration of Casey''s
+    quotation and a new award decision.'
+- id: agency_internal
+  tag: agency_internal
+  text: 'Agency''s view of its record: NPS argues that Casey''s quotation never reached the contracting officer''s
+    designated email address because the anti-spam system quarantined it, so it was not timely received and the
+    agency properly declined to consider it. NPS contends that receipt by the agency''s email gateway does not constitute
+    receipt at the designated address. The agency characterizes the quarantine as an isolated loss rather than a
+    systemic failure, noting that the other quarantined messages were automated notifications from a different sender
+    that the contracting officer did not know about before award. NPS also argues that the contracting officer''s
+    reference to a prior quarantine in a separate procurement does not show a systemic problem.
+
+    Casey''s transmission trace shows its quotation email was sent July 23 at 8:59 a.m. ET and delivered to a recipient
+    mail server. The agency''s quarantine record lists the email as received by the server but not released to the
+    recipient''s address. All 15 other vendors that submitted quotations had their quotations received in the contracting
+    officer''s inbox by the closing date, and one of those was received 27 minutes late and was considered. In the
+    weeks before the due date, the agency''s anti-spam program quarantined 16 automated third-party notifications
+    sent to the agency from Casey''s service platform, and the contracting officer was not aware of them before
+    award. The contracting officer was aware of a prior quarantine of a quotation in a separate procurement, where
+    that contracting officer received 27 other quotations without issue. The record contains no evidence of a deliberate
+    effort by contracting personnel to prevent an award to Casey.'
+- id: agency_report
+  tag: apo
+  available_from_turn: 2
+  text: 'Agency report (protected record): Casey''s transmission trace shows its quotation email was sent July 23
+    at 8:59 a.m. ET and delivered to a recipient mail server. The agency''s quarantine record lists the email as
+    received by the server but not released to the recipient''s address. All 15 other vendors that submitted quotations
+    had their quotations received in the contracting officer''s inbox by the closing date, and one of those was
+    received 27 minutes late and was considered. In the weeks before the due date, the agency''s anti-spam program
+    quarantined 16 automated third-party notifications sent to the agency from Casey''s service platform, and the
+    contracting officer was not aware of them before award. The contracting officer was aware of a prior quarantine
+    of a quotation in a separate procurement, where that contracting officer received 27 other quotations without
+    issue. The record contains no evidence of a deliberate effort by contracting personnel to prevent an award to
+    Casey.
+
+    Agency arguments: NPS argues that Casey''s quotation never reached the contracting officer''s designated email
+    address because the anti-spam system quarantined it, so it was not timely received and the agency properly declined
+    to consider it. NPS contends that receipt by the agency''s email gateway does not constitute receipt at the
+    designated address. The agency characterizes the quarantine as an isolated loss rather than a systemic failure,
+    noting that the other quarantined messages were automated notifications from a different sender that the contracting
+    officer did not know about before award. NPS also argues that the contracting officer''s reference to a prior
+    quarantine in a separate procurement does not show a systemic problem.'
+parameters:
+  profit_margin: 0.1
+  P_win_recompete: 0.07
+  incumbent_daily_margin: 5000
+  stay_days_expected: 100
+  protester_legal_cost: 250000
+  legal_cost_early: 60000
+  relationship_cost: 40000
+  agency_delay_cost_per_day: 10000
+  agency_public_loss: 300000
+  cost_reimbursement: 250000
+  corrective_action_cost: 100000
+  V_contract_per_seat: 20000000
+  incumbent: 0
+meta:
+  title: Casey & Company LLC
+  intervenor_present: false
+  protest_type: post-award
+  source: extracted via web-reading tool
+  pre_cutoff: false

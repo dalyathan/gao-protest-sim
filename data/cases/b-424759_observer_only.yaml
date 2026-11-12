@@ -1,0 +1,14 @@
+case_id: B-424759
+actual:
+  decision_date: '2026-10-27'
+  overall: dismissed
+  corrective_action_taken_during_protest: false
+  rulings: &id001
+    g1: dismissed
+    g2: dismissed
+    g3: dismissed
+  remedy: null
+  costs_recommended: false
+  outcome: dismissed
+  grounds: *id001
+  corrective_action: false

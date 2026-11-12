@@ -1,0 +1,15 @@
+case_id: B-424244
+actual:
+  decision_date: '2026-05-12'
+  overall: denied
+  corrective_action_taken_during_protest: false
+  rulings: &id001
+    g1: denied
+    g2: denied
+    g3: denied
+    g4: dismissed
+  remedy: None; the protest was denied and no recommendation was made.
+  costs_recommended: false
+  outcome: denied
+  grounds: *id001
+  corrective_action: false

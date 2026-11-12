@@ -1,0 +1,102 @@
+case_id: B-424244
+documents:
+- id: solicitation_and_background
+  tag: public
+  text: 'Agency: Department of the Navy
+
+    Solicitation: RFP No. 25R5032 for security, information technology (IT), and other support services
+
+    Type: Negotiated procurement; cost-plus-fixed-fee contract with a 12-month base period and four 12-month option
+    periods
+
+    Value: Not stated in the decision; evaluated costs were $166,226,487 (Business Integra) and $185,344,992 (HII)
+
+    Evaluation: Best-value tradeoff considering security and general services, IT, past performance, and cost
+
+    Offerors: 4
+
+    Protest type: post-award
+
+
+    On May 12, 2025, the Navy issued the RFP seeking security, IT, and general services at six U.S. locations. The
+    solicitation contemplated a cost-plus-fixed-fee contract with a 12-month base period and four 12-month option
+    periods. Award was to be made on a best-value tradeoff basis considering security and general services, IT,
+    past performance, and cost. Proposals were rated outstanding, good, acceptable, marginal, or unacceptable, and
+    a proposal had to be rated at least acceptable to be eligible for award. The Navy received four proposals by
+    the July 14 closing date, including proposals from Business Integra and HII. The source selection authority
+    agreed with the advisory council''s recommendations and found HII''s higher-cost proposal to represent the best
+    value. The Navy notified Business Integra of the award to HII and later provided a debriefing. Business Integra
+    then filed this protest.'
+- id: protester_view
+  tag: debrief
+  text: 'Protester: Business Integra Technology Solutions, Inc. (incumbent: None). Awardee: HII Mission Technologies
+    Corporation. Issues the protester has identified:
+
+    g1: The Navy unreasonably assessed significant weaknesses under the security staffing approach subfactor, including
+    its ACSO staffing, organizational structure and reporting, pre-vetted staff deployment, and security manager
+    resume, and applied unstated criteria.
+
+    g2: The Navy unreasonably found the general services scenario response unrealistic, arbitrarily and without
+    adequate documentation.
+
+    g3: The Navy unreasonably assessed a significant weakness under the security technical approach subfactor by
+    reading the proposal''s description of the security support program manager''s duties as direct work rather
+    than supervision.
+
+    g4: The Navy unreasonably evaluated the IT factor and the best-value tradeoff, and the agency''s evaluation
+    was otherwise flawed.'
+- id: agency_internal
+  tag: agency_internal
+  text: 'Agency''s view of its record: The Navy argues its evaluation was reasonable and consistent with the solicitation''s
+    criteria. It states the protester''s proposal was internally inconsistent on ACSO staffing, lacked explanation
+    of its organizational reporting, and did not address SCI and SAP access in its hiring approach. The Navy also
+    argues the scenario schedule was unrealistic and that the protester''s proposal described the program manager
+    performing tasks the PWS assigned to supervision.
+
+    Business Integra was rated marginal under security and general services and under IT, with marginal ratings
+    for security technical approach, security staffing approach, and general services scenario response, and an
+    acceptable rating for the security scenario response. HII was rated good under security and general services
+    and outstanding under IT. The evaluators found Business Integra''s proposal stated five ACSOs while its organizational
+    chart identified only three full-time equivalent ACSO positions. The security manager''s resume referenced SAPs
+    only in a requirements table, without specifying the role, and the evaluators found the older experience could
+    be irrelevant given policy changes. The source selection authority concluded that Business Integra''s proposal
+    included significant flaws showing a high likelihood of unsuccessful performance, and that awarding to it would
+    place the program at risk for a savings of $19 million.'
+- id: agency_report
+  tag: apo
+  available_from_turn: 2
+  text: 'Agency report (protected record): Business Integra was rated marginal under security and general services
+    and under IT, with marginal ratings for security technical approach, security staffing approach, and general
+    services scenario response, and an acceptable rating for the security scenario response. HII was rated good
+    under security and general services and outstanding under IT. The evaluators found Business Integra''s proposal
+    stated five ACSOs while its organizational chart identified only three full-time equivalent ACSO positions.
+    The security manager''s resume referenced SAPs only in a requirements table, without specifying the role, and
+    the evaluators found the older experience could be irrelevant given policy changes. The source selection authority
+    concluded that Business Integra''s proposal included significant flaws showing a high likelihood of unsuccessful
+    performance, and that awarding to it would place the program at risk for a savings of $19 million.
+
+    Agency arguments: The Navy argues its evaluation was reasonable and consistent with the solicitation''s criteria.
+    It states the protester''s proposal was internally inconsistent on ACSO staffing, lacked explanation of its
+    organizational reporting, and did not address SCI and SAP access in its hiring approach. The Navy also argues
+    the scenario schedule was unrealistic and that the protester''s proposal described the program manager performing
+    tasks the PWS assigned to supervision.'
+parameters:
+  profit_margin: 0.1
+  P_win_recompete: 0.33
+  incumbent_daily_margin: 5000
+  stay_days_expected: 100
+  protester_legal_cost: 250000
+  legal_cost_early: 60000
+  relationship_cost: 40000
+  agency_delay_cost_per_day: 10000
+  agency_public_loss: 300000
+  cost_reimbursement: 250000
+  corrective_action_cost: 100000
+  V_contract_per_seat: 185344992.0
+  incumbent: 0
+meta:
+  title: Business Integra Technology Solutions, Inc.
+  intervenor_present: true
+  protest_type: post-award
+  source: extracted via web-reading tool
+  pre_cutoff: true

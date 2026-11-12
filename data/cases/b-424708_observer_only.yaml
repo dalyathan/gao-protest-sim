@@ -1,0 +1,13 @@
+case_id: B-424708
+actual:
+  decision_date: '2026-10-29'
+  overall: denied_in_part_dismissed_in_part
+  corrective_action_taken_during_protest: true
+  rulings: &id001
+    g1: denied
+    g2: dismissed
+  remedy: null
+  costs_recommended: false
+  outcome: denied_in_part_dismissed_in_part
+  grounds: *id001
+  corrective_action: true

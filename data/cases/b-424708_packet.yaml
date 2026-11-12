@@ -1,0 +1,93 @@
+case_id: B-424708
+documents:
+- id: solicitation_and_background
+  tag: public
+  text: 'Agency: Department of Homeland Security, United States Coast Guard
+
+    Solicitation: RFP No. 70Z02326R93150001
+
+    Type: negotiated procurement (RFP under RFO parts 12 and 15), small business set-aside
+
+    Value: None
+
+    Evaluation: None
+
+    Offerors: None
+
+    Protest type: pre-award
+
+
+    The Coast Guard issued RFP No. 70Z02326R93150001 on June 18, 2026, under the Revolutionary FAR Overhaul parts
+    12 and 15, and amended it seven times. The small business set-aside seeks design, fabrication, delivery, installation,
+    and support of three advanced training devices. The devices are an MH-60T level 7 flight training device, a
+    mixed-reality hoist training simulator, and a deployable hoist training simulator. All three must be interoperable
+    and able to operate in a linked, real-time, synchronized mode with latency not exceeding 50 milliseconds. The
+    agency historically relied on classroom instruction, part-task trainers, and operational flight time to train
+    aircrews. The Aviation Training Center reviewed flight mechanic training then provided under a contract with
+    the protester and concluded that agency-owned hoist simulators would be beneficial. A working group recommended
+    acquiring at least three H-60 simulators and a hoist trainer, and market research indicated that a prime contractor
+    integrating subcontracted specialty vendors was the industry standard. The Secretary of Homeland Security approved
+    the Commandant''s contract approval memorandum on March 12, 2026. On August 3, 2026, before proposals were due,
+    the protester filed this protest challenging the combination of the requirements.'
+- id: protester_view
+  tag: debrief
+  text: 'Protester: Priority 1 Air Rescue Operations (Arizona), LP (incumbent: None). Awardee: None. Issues the
+    protester has identified:
+
+    g1: The RFP unduly restricts competition by unnecessarily combining the requirements for three simulator types
+    into one solicitation, in violation of CICA''s full and open competition and restrictive provisions requirements.
+
+    g2: The RFP''s hoist training simulator specifications require equipment specific to one manufacturer, showing
+    bias in favor of that manufacturer.'
+- id: agency_internal
+  tag: agency_internal
+  text: 'Agency''s view of its record: The agency contends that combining the three devices under one solicitation
+    is reasonable given its redesign of flight crew training and is critical to safety and effectiveness. It argues
+    that interoperability is the reason for a single solicitation and that a single contractor must integrate the
+    components to achieve reliable training. It submitted a declaration from the Aviation Training Center commanding
+    officer supporting this position. For the manufacturer-specific claim, the agency stated it would amend the
+    RFP to use generic terms, and it later did so during the protest.
+
+    The RFP requires the three devices to operate in a linked, synchronized mode with latency not exceeding 50 milliseconds.
+    The Commandant''s memorandum projected that training flights per mechanic would fall from 11 to 6 and that annual
+    flight hour savings would exceed $15 million. Market research described a prime contractor leading production
+    and integration, with subcontracted specialty vendors, as the industry standard. The commanding officer''s declaration
+    states that separately procured simulators could use incompatible models and exceed the latency limit. The agency
+    cites two prior instances in which split simulator procurements led to interoperability failures.'
+- id: agency_report
+  tag: apo
+  available_from_turn: 2
+  text: 'Agency report (protected record): The RFP requires the three devices to operate in a linked, synchronized
+    mode with latency not exceeding 50 milliseconds. The Commandant''s memorandum projected that training flights
+    per mechanic would fall from 11 to 6 and that annual flight hour savings would exceed $15 million. Market research
+    described a prime contractor leading production and integration, with subcontracted specialty vendors, as the
+    industry standard. The commanding officer''s declaration states that separately procured simulators could use
+    incompatible models and exceed the latency limit. The agency cites two prior instances in which split simulator
+    procurements led to interoperability failures.
+
+    Agency arguments: The agency contends that combining the three devices under one solicitation is reasonable
+    given its redesign of flight crew training and is critical to safety and effectiveness. It argues that interoperability
+    is the reason for a single solicitation and that a single contractor must integrate the components to achieve
+    reliable training. It submitted a declaration from the Aviation Training Center commanding officer supporting
+    this position. For the manufacturer-specific claim, the agency stated it would amend the RFP to use generic
+    terms, and it later did so during the protest.'
+parameters:
+  profit_margin: 0.1
+  P_win_recompete: 0.33
+  incumbent_daily_margin: 5000
+  stay_days_expected: 100
+  protester_legal_cost: 250000
+  legal_cost_early: 60000
+  relationship_cost: 40000
+  agency_delay_cost_per_day: 10000
+  agency_public_loss: 300000
+  cost_reimbursement: 250000
+  corrective_action_cost: 100000
+  V_contract_per_seat: 20000000
+  incumbent: 0
+meta:
+  title: Priority 1 Air Rescue Operations (Arizona), LP
+  intervenor_present: false
+  protest_type: pre-award
+  source: extracted via web-reading tool
+  pre_cutoff: false

@@ -1,0 +1,92 @@
+case_id: B-424585.2
+documents:
+- id: solicitation_and_background
+  tag: public
+  text: 'Agency: Department of the Air Force
+
+    Solicitation: RFP No. FA7014-26-R-0024, for advisory and assistance support services
+
+    Type: Task order issued under GSA One Acquisition Solution for Integrated Services Plus (OASIS+) contracts,
+    pursuant to RFO subpart 16.5
+
+    Value: Anticipated to exceed $10 million; predecessor contract was valued at $103 million
+
+    Evaluation: Not specified in the decision (solicitation Section M contains the evaluation criteria)
+
+    Offerors: None
+
+    Protest type: pre-award
+
+
+    On May 8, 2026, the Air Force issued the solicitation to GSA OASIS+ contract holders for highly sensitive support
+    services supporting DAF/A10 Strategic Deterrence and Nuclear Integration. The solicitation required offerors
+    to hold an active TOP SECRET facility clearance with SECRET safeguarding at proposal submission, and it required
+    the contractor to operate a Government-provided SIPRNet laptop and host SECRET-level meetings. A June 15 agency
+    memorandum described the basis for the clearance requirements, citing schedule risks and the lengthy process
+    for obtaining clearances. Sawdey filed a first protest on June 16, before the proposal closing date, challenging
+    the clearance requirements and alleging ambiguity. The agency then agreed to amend the solicitation, and GAO
+    dismissed that protest. On July 9, the agency issued an amendment stating that the prime contractor, not only
+    a proposed subcontractor, must meet the security requirements, and it stated that proposal revisions would not
+    be permitted. Sawdey filed this protest on July 20.'
+- id: protester_view
+  tag: debrief
+  text: 'Protester: Sawdey Solution Services, Inc. (Beavercreek, Ohio) (incumbent: None). Awardee: None. Issues
+    the protester has identified:
+
+    g1: The requirement that offerors meet the security clearance requirements at proposal submission is unduly
+    restrictive of competition, since DCSA approvals require a current operational need that exists only after award.
+    Sawdey argues that a proposed subcontractor''s clearances should be sufficient.
+
+    g2: The solicitation is ambiguous because it requires hosting SECRET-level meetings but no longer requires a
+    SCIF, which Sawdey says impairs its ability to compete intelligently.'
+- id: agency_internal
+  tag: agency_internal
+  text: 'Agency''s view of its record: The agency argues that the clearance requirement reasonably reflects its
+    concerns about the risk of awarding to a contractor that cannot begin performance on day one, given the classified
+    SIPRNet laptop and accredited restricted area needed on day 1. It contends that the applicable regulations require
+    the prime contractor to hold the facility clearance, so a subcontractor''s clearance cannot establish eligibility.
+    The agency further argues that SECRET-level meetings require a DCSA-approved Closed Area under the NISPOM, not
+    a SCIF, so the solicitation contains no inconsistency.
+
+    Sawdey stated in its protest that it was assured of obtaining the required approvals before work commenced,
+    and later said it would obtain them within the 30-day transition-in period. The agency''s market research reported
+    multiple prospective prime contractors already held the necessary clearances. A solicitation amendment (0001)
+    removed the requirement for a SCIF in May 2026. The July 9 amendment (0004) clarified that the prime contractor
+    must meet the security requirements. The PWS provides a 30-day transition-in period, and the awardee must submit
+    a Transition-In Plan.'
+- id: agency_report
+  tag: apo
+  available_from_turn: 2
+  text: 'Agency report (protected record): Sawdey stated in its protest that it was assured of obtaining the required
+    approvals before work commenced, and later said it would obtain them within the 30-day transition-in period.
+    The agency''s market research reported multiple prospective prime contractors already held the necessary clearances.
+    A solicitation amendment (0001) removed the requirement for a SCIF in May 2026. The July 9 amendment (0004)
+    clarified that the prime contractor must meet the security requirements. The PWS provides a 30-day transition-in
+    period, and the awardee must submit a Transition-In Plan.
+
+    Agency arguments: The agency argues that the clearance requirement reasonably reflects its concerns about the
+    risk of awarding to a contractor that cannot begin performance on day one, given the classified SIPRNet laptop
+    and accredited restricted area needed on day 1. It contends that the applicable regulations require the prime
+    contractor to hold the facility clearance, so a subcontractor''s clearance cannot establish eligibility. The
+    agency further argues that SECRET-level meetings require a DCSA-approved Closed Area under the NISPOM, not a
+    SCIF, so the solicitation contains no inconsistency.'
+parameters:
+  profit_margin: 0.1
+  P_win_recompete: 0.33
+  incumbent_daily_margin: 5000
+  stay_days_expected: 100
+  protester_legal_cost: 250000
+  legal_cost_early: 60000
+  relationship_cost: 40000
+  agency_delay_cost_per_day: 10000
+  agency_public_loss: 300000
+  cost_reimbursement: 250000
+  corrective_action_cost: 100000
+  V_contract_per_seat: 20000000
+  incumbent: 0
+meta:
+  title: Sawdey Solution Services, Inc.
+  intervenor_present: false
+  protest_type: pre-award
+  source: extracted via web-reading tool
+  pre_cutoff: false

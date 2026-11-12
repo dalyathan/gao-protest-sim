@@ -1,0 +1,13 @@
+case_id: B-424681
+actual:
+  decision_date: '2026-10-16'
+  overall: denied
+  corrective_action_taken_during_protest: false
+  rulings: &id001
+    g1: denied
+    g2: denied
+  remedy: null
+  costs_recommended: false
+  outcome: denied
+  grounds: *id001
+  corrective_action: false
