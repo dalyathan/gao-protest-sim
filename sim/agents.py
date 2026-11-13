@@ -5,8 +5,8 @@ it receive. The orchestrator never adds anything else.
 
 RULES = ("You are playing ONE role in a simulation of a GAO bid protest. Reason only from the "
          "information given. Do not invent facts or case citations; you may rely on general GAO "
-         "principles you are confident about, labelled as such. End your answer with a ```json``` "
-         "block exactly matching the requested keys.")
+         "principles you are confident about, labelled as such. START your answer with a ```json``` "
+         "block exactly matching the requested keys, then give your reasoning in under 250 words.")
 
 ROLES = {
     "protester_counsel": "Outside counsel for the protester, an experienced GAO protest lawyer. "
@@ -35,7 +35,10 @@ def scorecard_text(actor: str, p: dict) -> str:
         return (f"SCORECARD (minimize loss): -${p['agency_delay_cost_per_day']:,}/day of delay "
                 f"- P(sustain) x (${p['agency_public_loss']:,} reputational + ${p['cost_reimbursement']:,} "
                 f"protester costs) - ${p['corrective_action_cost']:,} if you take corrective action. "
-                "Defending runs ~70 more days to decision; corrective action now takes ~35 days total. "
+                f"Defending holds the procurement until GAO decides (~{p.get('stay_days_expected', 100)} days from filing); "
+                f"if GAO sustains, you must ALSO re-evaluate (~{p.get('corrective_action_days', 90)} days). "
+                f"Corrective action now ends the protest but the re-evaluation (~{p.get('corrective_action_days', 90)} "
+                f"days) still delays the award. "
                 "Late corrective action risks cost reimbursement for undue delay.")
     if actor == "protester_counsel":
         return "SCORECARD: your client's payoff, plus credibility with GAO (weight 0.3)."
@@ -54,14 +57,23 @@ TASKS = {
     "COUNSEL_T1": "Draft the protest grounds you would file. For each give id (g1, g2, ...), name, "
         "a 2-sentence argument, and p_sustain. Give overall p_relief (incl. corrective action) and advice to "
         "the client. JSON keys: grounds[{id,name,p_sustain}], p_relief, recommend_filing, client_advice",
+    "COUNSEL_T1_FIXED": "For each filed ground give id (as listed), a 2-sentence assessment, and p_sustain. "
+        "Give overall p_relief (incl. corrective action) and advice to the client. "
+        "JSON keys: grounds[{id,p_sustain}], p_relief, recommend_filing, client_advice",
     "COMPANY_T1": "Decide FILE or DO_NOT_FILE and a budget cap. Show expected-value reasoning. "
         "JSON keys: decision ('file'|'do_not_file'), budget_cap_usd, my_p_relief",
     "AGENCY_T2": "Estimate p_sustain per ground and p_prejudice; compare expected loss of DEFEND vs "
         "CORRECTIVE_ACTION; decide. If defending, summarize your agency report arguments. "
         "JSON keys: decision ('defend'|'corrective_action'), p_sustain{ground_id:p}, p_prejudice, report_summary",
     "COUNSEL_T3": "You now see the protected record. Update p_sustain per ground; decide which grounds to "
-        "keep or drop and any supplemental grounds; summarize comments to GAO; write a NON-SPECIFIC message "
-        "to the client. JSON keys: keep[], drop[], supplemental[], p_sustain{}, p_relief, comments_summary, client_message",
+        "keep or drop (keep/drop list ground ids) and any supplemental grounds the record supports; summarize comments "
+        "to GAO; write a NON-SPECIFIC message to the client. JSON keys: keep[ids], drop[ids], "
+        "supplemental[{id:'s1',name}], p_sustain{id:p}, p_relief, comments_summary, client_message",
+    "COUNSEL_T3_NO_APO": "You were NOT admitted to the protective order: you have only the agency's public "
+        "summary, not the protected record. Update p_sustain per ground; decide which grounds to keep or drop "
+        "(list ids) and any supplemental grounds; summarize comments to GAO; write a message to the client. "
+        "JSON keys: keep[ids], drop[ids], supplemental[{id:'s1',name}], p_sustain{id:p}, p_relief, "
+        "comments_summary, client_message",
     "COMPANY_T3": "Decide CONTINUE or WITHDRAW. JSON keys: decision ('continue'|'withdraw')",
     "GAO_T5": "Rule on each remaining ground (sustained|denied|dismissed) with a short rationale and "
         "confidence; analyze prejudice; give overall outcome and whether costs are recommended. JSON keys: "

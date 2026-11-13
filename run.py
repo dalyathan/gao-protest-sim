@@ -48,37 +48,61 @@ def profile_from_log(log):
     out = {}
     for t in log["turns"]:
         j = t.get("json", {})
-        if t.get("task") == "COUNSEL_T1":
-            out["counsel_p_relief_t1"] = j["p_relief"]
-        elif t.get("task") == "AGENCY_T2":
+        if t.get("task") == "COUNSEL_T1" and j.get("p_relief") is not None:
+            out["counsel_p_relief_t1"] = float(j["p_relief"])
+        elif t.get("task") == "AGENCY_T2" and isinstance(j.get("p_sustain"), dict):
             out["agency_p_sustain_any"] = round(p_any(j["p_sustain"]), 3)
-        elif t.get("task") == "COUNSEL_T3":
-            out["counsel_p_relief_t3"] = j["p_relief"]
+        elif t.get("task") == "COUNSEL_T3" and j.get("p_relief") is not None:
+            out["counsel_p_relief_t3"] = float(j["p_relief"])
     out.setdefault("counsel_p_relief_t3", out.get("counsel_p_relief_t1", 0.2))
-    out["true_p_sustain"] = out.get("agency_p_sustain_any", 0.3)
+    if "agency_p_sustain_any" in out:  # absent when the company never filed
+        out["true_p_sustain"] = out["agency_p_sustain_any"]
     return out
+
+
+def model_tag():
+    import os
+    if os.environ.get("SIM_BACKEND", "").lower() == "cli":
+        return "cli-" + os.environ.get("SIM_CLI_MODEL", "sonnet")
+    return os.environ.get("SIM_MODEL", "claude-sonnet-5-5")
 
 
 def cmd_play(a):
     case = Case.load(a.case)
     llm = make_llm(a.mock)
     deciders = {"AGENCY_T2": a.agency, "COMPANY_T1": a.company, "COMPANY_T3": a.company}
+    if a.real_path:  # condition on the path published cases actually took, to test the merits
+        deciders = {"COMPANY_T1": "file", "AGENCY_T2": "defend", "COMPANY_T3": "continue"}
+    fixed = a.fixed_grounds or (a.real_path and bool(case.extra.get("filed_grounds")))
     policy = Policy.load(POLICY) if "policy" in deciders.values() and POLICY.exists() else None
     memory = {}
     RUNS.mkdir(exist_ok=True)
     PROFILES.mkdir(parents=True, exist_ok=True)
+    # Everything that changes the game goes into the name, so --resume never mixes conditions.
+    dec = "realpath" if a.real_path else f"ag-{a.agency}_co-{a.company}"
+    mt = "mock" if a.mock else model_tag()
+    tag = f"{case.case_id}_{a.scenario}_{dec}{'_fixed' if fixed else ''}_{mt}_t{a.temperature}"
+    if a.mock:
+        print("NOTE: mock agents give canned answers; their scores are NOT meaningful.")
     for r in range(a.repeats):
-        log = Game(case, llm, a.scenario, deciders, policy, a.temperature, memory).run()
+        if a.resume and not a.lessons and list(RUNS.glob(f"{tag}_*_r{r}.json")):
+            print(f"[run {r}] already done, skipping (use --no-resume to redo)")
+            continue
+        log = Game(case, llm, a.scenario, deciders, policy, a.temperature, memory, fixed_grounds=fixed).run()
+        log["model"] = mt
         log["score"] = score(log, case)
         stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-        out = RUNS / f"{case.case_id}_{a.scenario}_ag-{a.agency}_{stamp}_r{r}{'_mock' if a.mock else ''}.json"
+        out = RUNS / f"{tag}_{stamp}_r{r}.json"
         save(log, out)
-        if not a.mock:  # mock beliefs are fake; don't let them train the policy
-            prof = profile_from_log(log)
-            (PROFILES / f"{case.case_id}.json").write_text(json.dumps(prof, indent=2))
+        # RL profiles: only realistic, unforced LLM games, averaged over all such games of the case.
+        if not a.mock and a.scenario == "realistic" and set(deciders.values()) == {"llm"}:
+            update_profile(case.case_id, profile_from_log(log))
         res = log["result"]
-        print(f"[run {r}] outcome={res['outcome']}  payoffs={ {k: round(v) for k, v in res['payoffs'].items()} }")
-        print(f"         score={log['score']}  calls={log['usage']['calls']}  -> {out.name}")
+        sc = log["score"]
+        g = f"  grounds {sc.get('grounds_exact_match')}/{sc.get('grounds_ruled')}" if "grounds_ruled" in sc else ""
+        print(f"[run {r}] outcome={res['outcome']} (real: {sc.get('actual_outcome')})  "
+              f"payoffs={ {k: round(v) for k, v in res['payoffs'].items()} }{g}")
+        print(f"         calls={log['usage'].get('calls')}  -> {out.name}")
         if a.lessons:  # agents write notes for the next repeat (in-context learning)
             for actor in ("protester_counsel", "agency"):
                 from sim.agents import TASKS, prompt
@@ -89,12 +113,33 @@ def cmd_play(a):
                 memory[actor] = (memory.get(actor, "") + "\n" + "\n".join(f"- {n}" for n in notes)).strip()
 
 
+def update_profile(case_id, prof):
+    """Running mean of belief profiles across games of one case (missing keys skipped)."""
+    path = PROFILES / f"{case_id}.json"
+    old = json.loads(path.read_text()) if path.exists() else {}
+    n = old.get("n_games", 0)
+    merged = {"n_games": n + 1}
+    for k in set(old) | set(prof):
+        if k == "n_games":
+            continue
+        a, b = old.get(k), prof.get(k)
+        if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+            merged[k] = round((a * n + b) / (n + 1), 4)
+        else:
+            merged[k] = b if b is not None else a
+    path.write_text(json.dumps(merged, indent=2))
+
+
 def load_envs():
     envs = []
     for f in sorted(PROFILES.glob("*.json")):
         prof = json.loads(f.read_text())
         stem = prof.get("params_from", f.stem).lower()
         case_file = ROOT / "data" / "cases" / f"{stem}_packet.yaml"
+        need = ("counsel_p_relief_t1", "agency_p_sustain_any", "counsel_p_relief_t3", "true_p_sustain")
+        if not case_file.exists() or any(k not in prof for k in need):
+            print(f"skipping profile {f.name}: incomplete (no filed game yet) or no packet")
+            continue
         params = yaml.safe_load(case_file.read_text())["parameters"]
         envs.append((f.stem, params, prof))
     if not envs:
@@ -148,6 +193,13 @@ def main():
     pl.add_argument("--repeats", type=int, default=1)
     pl.add_argument("--temperature", type=float, default=0.7)
     pl.add_argument("--lessons", action="store_true", help="agents write lessons between repeats")
+    pl.add_argument("--no-resume", dest="resume", action="store_false",
+                    help="re-run repeats that already have a log in runs/ (default: skip them)")
+    pl.add_argument("--real-path", action="store_true",
+                    help="force file/defend/continue (the path every published decision took) to test merits; "
+                         "uses the packet's filed_grounds when present")
+    pl.add_argument("--fixed-grounds", action="store_true",
+                    help="counsel argues exactly the packet's filed_grounds (needed for per-ground scoring)")
     tr = sub.add_parser("train")
     tr.add_argument("--episodes", type=int, default=50000)
     sub.add_parser("compare")

@@ -71,18 +71,26 @@ documents:
     reliable training. It submitted a declaration from the Aviation Training Center commanding officer supporting
     this position. For the manufacturer-specific claim, the agency stated it would amend the RFP to use generic
     terms, and it later did so during the protest.'
+filed_grounds:
+- id: g1
+  name: The RFP unduly restricts competition by unnecessarily combining the requirements for three simulator types
+    into one solicitation, in violation of CICA's full and open competition and restrictive provisions requirements.
+- id: g2
+  name: The RFP's hoist training simulator specifications require equipment specific to one manufacturer, showing
+    bias in favor of that manufacturer.
 parameters:
   profit_margin: 0.1
   P_win_recompete: 0.33
   incumbent_daily_margin: 5000
   stay_days_expected: 100
-  protester_legal_cost: 250000
-  legal_cost_early: 60000
+  protester_legal_cost: 100000
+  legal_cost_early: 30000
   relationship_cost: 40000
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000
-  corrective_action_cost: 100000
+  corrective_action_cost: 250000
+  corrective_action_days: 90
   V_contract_per_seat: 20000000
   incumbent: 0
 meta:

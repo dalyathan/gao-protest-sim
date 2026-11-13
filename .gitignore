@@ -4,3 +4,8 @@ __pycache__/
 runs/*.json
 !runs/rl_policy.json
 .env
+data/heinonline_raw/
+data/gao_pdfs/
+data/gao_txt/
+data/test_facts/
+data/test_answers/

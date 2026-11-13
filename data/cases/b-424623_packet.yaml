@@ -72,6 +72,16 @@ documents:
     update affected all vendors, and that Octo spent over two hours resolving it. The agency also contends the team''s
     interactions showed gaps in leadership and direction, and that Octo''s design choices prioritized persistent
     operation without adequate cost controls.'
+filed_grounds:
+- id: g1
+  name: Octo contends the agency unreasonably faulted it for not deploying all new code challenge requirements to
+    production, arguing that Terraform and Databricks software updates were beyond its control.
+- id: g2
+  name: Octo contends the agency unreasonably found weak program management and methodology, asserting its personnel
+    are highly trained and its response to the Databricks issue was nimble.
+- id: g3
+  name: Octo contends the agency unreasonably found its solution lacked cost-effective platform methods based on
+    high operational costs, arguing its required capabilities necessarily carry higher infrastructure costs.
 parameters:
   profit_margin: 0.1
   P_win_recompete: 0.2
@@ -83,7 +93,8 @@ parameters:
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000
-  corrective_action_cost: 100000
+  corrective_action_cost: 250000
+  corrective_action_days: 90
   V_contract_per_seat: 100598462.0
   incumbent: 1
 meta:

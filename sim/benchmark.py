@@ -1,6 +1,11 @@
 """Rational benchmark: risk-neutral expected-value choice at each decision point
 (GAME_DESIGN.md section 5). Used to measure how far LLM and RL choices deviate
 from textbook rationality.
+
+p_relief is counsel's TOTAL probability of relief (corrective action or sustain),
+as the COUNSEL_T1 task defines it. `ca_share_of_relief` is the part of that relief
+expected to arrive early, through corrective action (GAO statistics: most relief
+comes that way); it never adds relief on top of p_relief.
 """
 from .payoffs import agency_payoff, protester_payoff
 
@@ -13,19 +18,19 @@ def ev_agency(state: dict, p: dict) -> dict:
     return {"defend": defend, "corrective_action": ca}
 
 
-def ev_company_t1(state: dict, p: dict, p_agency_ca: float = 0.3) -> dict:
-    pr = state["p_relief"]
+def ev_company_t1(state: dict, p: dict) -> dict:
+    pr = min(max(float(state["p_relief"]), 0.0), 1.0)
+    s = p.get("ca_share_of_relief", 0.6)
     inc = state.get("incumbent", 0)
-    # Relief arrives early (CA) with prob p_agency_ca, otherwise via a sustain at decision.
-    early = protester_payoff(p, True, "early", True, False, inc)
-    win_full = protester_payoff(p, True, "full", True, True, inc)
-    lose_full = protester_payoff(p, True, "full", False, False, inc)
-    file = p_agency_ca * early + (1 - p_agency_ca) * (pr * win_full + (1 - pr) * lose_full)
+    early_win = protester_payoff(p, True, "early", True, False, inc)
+    full_win = protester_payoff(p, True, "full", True, True, inc)
+    full_lose = protester_payoff(p, True, "full", False, False, inc)
+    file = pr * (s * early_win + (1 - s) * full_win) + (1 - pr) * full_lose
     return {"file": file, "do_not_file": 0.0}
 
 
 def ev_company_t3(state: dict, p: dict) -> dict:
-    pr = state["p_relief"]
+    pr = min(max(float(state["p_relief"]), 0.0), 1.0)
     inc = state.get("incumbent", 0)
     cont = pr * protester_payoff(p, True, "full", True, True, inc) + \
         (1 - pr) * protester_payoff(p, True, "full", False, False, inc)

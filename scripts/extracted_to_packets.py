@@ -13,7 +13,8 @@ CUTOFF = "2026-07-01"  # decisions before this may be in model training data
 DEFAULTS = {"profit_margin": 0.10, "P_win_recompete": 0.3, "incumbent_daily_margin": 5000,
             "stay_days_expected": 100, "protester_legal_cost": 250000, "legal_cost_early": 60000,
             "relationship_cost": 40000, "agency_delay_cost_per_day": 10000, "agency_public_loss": 300000,
-            "cost_reimbursement": 250000, "corrective_action_cost": 100000}
+            "cost_reimbursement": 250000, "corrective_action_cost": 250000,
+            "corrective_action_days": 90}
 
 
 def money(s):
@@ -48,7 +49,13 @@ def main():
                     f"Agency report (protected record): {fa['record_facts_protected']}\n"
                     f"Agency arguments: {fa['agency_position']}"},
             ],
+            # The grounds actually filed (public once filed), with ids shared with the observer file,
+            # so games run with --fixed-grounds can be scored ground by ground.
+            "filed_grounds": [{"id": g["id"], "name": g["claim"]} for g in fa["protester_grounds"]],
             "parameters": {**DEFAULTS, "V_contract_per_seat": money(fa.get("est_value")),
+                           # small protests are often filed cheaply (small firms, sometimes pro se)
+                           "protester_legal_cost": int(min(250000, max(25000, 0.005 * money(fa.get("est_value"))))),
+                           "legal_cost_early": int(min(60000, max(10000, 0.0015 * money(fa.get("est_value"))))),
                            "incumbent": 1 if fa.get("protester_is_incumbent") else 0,
                            "P_win_recompete": round(min(0.6, 1 / max(2, n_off - 1)), 2)},
             "meta": {"title": fa["title"], "intervenor_present": fa.get("intervenor_present"),

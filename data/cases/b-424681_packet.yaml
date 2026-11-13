@@ -65,18 +65,27 @@ documents:
     L-1 is material and mandatory, and that without it a proposal cannot be rated acceptable under the technical
     or past performance factors. The Navy conceded it erred in telling Hatalom that FAR 52.215-1 did not apply,
     but maintains the proposal was properly excluded for omitting required material information.'
+filed_grounds:
+- id: g1
+  name: Hatalom contends the rejection was unreasonable because the agency already had its attachment L-1 from the
+    April submission, so the agency possessed a complete proposal by the deadline. It argues the agency was therefore
+    required to accept and evaluate the July proposal.
+- id: g2
+  name: Hatalom contends the Navy wrongly concluded that the omission could not be waived as an informality or minor
+    irregularity under FAR 52.215-1(f)(3).
 parameters:
   profit_margin: 0.1
   P_win_recompete: 0.33
   incumbent_daily_margin: 5000
   stay_days_expected: 100
-  protester_legal_cost: 250000
-  legal_cost_early: 60000
+  protester_legal_cost: 100000
+  legal_cost_early: 30000
   relationship_cost: 40000
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000
-  corrective_action_cost: 100000
+  corrective_action_cost: 250000
+  corrective_action_days: 90
   V_contract_per_seat: 20000000
   incumbent: 0
 meta:

@@ -43,8 +43,13 @@ class Policy:
         k = state_key(tag, state)
         if explore and random.random() < self.epsilon:
             return random.choice(MOVES[tag])
-        qs = self.q[tag][k]
-        return max(MOVES[tag], key=lambda a: qs[a]) if qs else MOVES[tag][0]
+        qs = self.q[tag].get(k, {})
+        tried = [a for a in MOVES[tag] if a in qs]  # never prefer an action just because it is untried
+        if not tried:
+            return random.choice(MOVES[tag]) if explore else MOVES[tag][0]
+        if explore and len(tried) < len(MOVES[tag]):
+            return random.choice([a for a in MOVES[tag] if a not in qs])
+        return max(tried, key=lambda a: qs[a])
 
     def update(self, tag, state, action, reward):
         k = state_key(tag, state)
@@ -115,7 +120,7 @@ class ProtestEnv:
         a3 = pol.act("COMPANY_T3", s3, explore)
         if a3 == "withdraw":
             rp = protester_payoff(p, True, "early", False, False) / 1e5
-            ra = agency_payoff(p, True, False, None, False) / 1e5 * 0.5  # protest ends ~halfway
+            ra = agency_payoff(p, True, False, None, False, withdrawn=True) / 1e5  # same as game.finish
             outcome = "withdrawn"
         else:
             sustained = random.random() < true_p

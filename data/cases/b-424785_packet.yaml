@@ -81,18 +81,27 @@ documents:
     noting that the other quarantined messages were automated notifications from a different sender that the contracting
     officer did not know about before award. NPS also argues that the contracting officer''s reference to a prior
     quarantine in a separate procurement does not show a systemic problem.'
+filed_grounds:
+- id: g1
+  name: The agency improperly refused to consider Casey's quotation, which Casey contends was timely submitted to
+    the designated address and was received by the agency's email server before the deadline.
+- id: g2
+  name: The agency knew its email system had previously quarantined legitimate quotations and unreasonably failed
+    to correct this known problem, so the quarantine reflects a systemic failure requiring consideration of Casey's
+    quotation and a new award decision.
 parameters:
   profit_margin: 0.1
   P_win_recompete: 0.07
   incumbent_daily_margin: 5000
   stay_days_expected: 100
-  protester_legal_cost: 250000
-  legal_cost_early: 60000
+  protester_legal_cost: 100000
+  legal_cost_early: 30000
   relationship_cost: 40000
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000
-  corrective_action_cost: 100000
+  corrective_action_cost: 250000
+  corrective_action_days: 90
   V_contract_per_seat: 20000000
   incumbent: 0
 meta:

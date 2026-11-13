@@ -70,18 +70,27 @@ documents:
     contractor to hold the facility clearance, so a subcontractor''s clearance cannot establish eligibility. The
     agency further argues that SECRET-level meetings require a DCSA-approved Closed Area under the NISPOM, not a
     SCIF, so the solicitation contains no inconsistency.'
+filed_grounds:
+- id: g1
+  name: The requirement that offerors meet the security clearance requirements at proposal submission is unduly
+    restrictive of competition, since DCSA approvals require a current operational need that exists only after award.
+    Sawdey argues that a proposed subcontractor's clearances should be sufficient.
+- id: g2
+  name: The solicitation is ambiguous because it requires hosting SECRET-level meetings but no longer requires a
+    SCIF, which Sawdey says impairs its ability to compete intelligently.
 parameters:
   profit_margin: 0.1
   P_win_recompete: 0.33
   incumbent_daily_margin: 5000
   stay_days_expected: 100
-  protester_legal_cost: 250000
-  legal_cost_early: 60000
+  protester_legal_cost: 100000
+  legal_cost_early: 30000
   relationship_cost: 40000
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000
-  corrective_action_cost: 100000
+  corrective_action_cost: 250000
+  corrective_action_days: 90
   V_contract_per_seat: 20000000
   incumbent: 0
 meta:

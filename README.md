@@ -78,3 +78,16 @@ corrective action, so published decisions over-represent merits rulings.
 6. [ ] ≥30 case packets; backtest scoreboard
 7. [ ] Calibrate payoff parameters to real agency behavior (see GAME_DESIGN §8)
 8. [ ] Demo page
+
+## Running on your Claude subscription (no API key)
+
+Each agent turn can go through Claude Code's `claude -p` instead of the API:
+
+```bash
+SIM_BACKEND=cli bash run_all.sh            # Sonnet (default)
+SIM_BACKEND=cli SIM_CLI_MODEL=opus bash run_all.sh
+```
+
+Every call runs in an empty temp folder with all tools off, `--safe-mode`, and no saved
+session, so agents can't read project files (including observer-only outcomes) or each
+other. Usage counts against your plan's limits; there is no temperature control.

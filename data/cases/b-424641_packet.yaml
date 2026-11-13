@@ -1,72 +1,93 @@
-# Blind case packet: Michael Baker-International Stantec JV (MBIS) v. U.S. Army Corps of Engineers
-# Facts drawn from the public GAO decision; GAO's analysis and the outcome are NOT included.
-# Outcome is stored separately in observer_only.yaml.
-
 case_id: B-424641
 documents:
-  - id: synopsis
-    tag: public
-    text: |
-      U.S. Army Corps of Engineers, Northwestern Division. Synopsis W9128F25RA029 (issued July 10, 2025)
-      for architect-engineer (A/E) services under the Brooks Act and FAR subpart 36.6.
-      Target: five IDIQ contracts, 5-year periods, fixed-price task orders $250K-$25M, $200M total shared capacity.
-      No price evaluation (qualifications-based selection). 16 SF330 qualification statements received (Aug 21, 2025).
-      Evaluation criteria, descending importance: (1) specialized experience and technical competence,
-      (2) professional qualifications, (3) past performance, (4) capacity, (5) knowledge of locality.
-      Adjectival ratings: exceptional, above average, average, marginal, unacceptable (neutral for past performance).
-      Small business participation and DoD contract volume are tie-breakers only.
-      The synopsis limits evaluators to specified sections of the SF330 for each criterion.
-      Published Q&A responses are incorporated into the solicitation. Neither the synopsis nor the Q&A
-      states a preference for any particular project delivery method or project type.
+- id: synopsis
+  tag: public
+  text: 'U.S. Army Corps of Engineers, Northwestern Division. Synopsis W9128F25RA029 (issued July 10, 2025)
 
-  - id: debrief
-    tag: debrief
-    text: |
-      March 5, 2026: MBIS (joint venture of Michael Baker International and Stantec) notified it will no longer
-      be considered. MBIS ranked 10th of 16; the seven most highly qualified firms were selected for interviews.
-      MBIS ratings/weaknesses communicated at debriefing:
-        - Specialized experience: weakness for lacking a traditional design-bid-build (DBB) new-construction
-          vertical facility project; weakness for lacking a historic preservation project.
-        - Professional qualifications: weakness based on the SF330 Section G team matrix (team history).
-        - Past performance: "above average" (MBIS believes it merits "exceptional").
-        - Capacity: "above average" (MBIS believes it merits "exceptional").
-      MBIS filed an agency-level protest with the Corps; the Corps denied it on July 2, 2026.
+    for architect-engineer (A/E) services under the Brooks Act and FAR subpart 36.6.
 
-  - id: protester_context
-    tag: private_protester
-    text: |
-      MBIS is not an incumbent (new multiple-award vehicle). Being selected for interviews is required to be
-      considered for one of ~5 awards (~$40M expected capacity per seat). Deadline to file at GAO is ~10 days
-      after the agency-level denial.
+    Target: five IDIQ contracts, 5-year periods, fixed-price task orders $250K-$25M, $200M total shared capacity.
 
-  - id: agency_internal
-    tag: agency_internal
-    text: |
-      Internal view of the record (agency only):
-        - The board's DBB weakness reflected evaluators' view that DBB vertical construction experience is
-          important for this program; this preference does not appear in the synopsis or Q&A text.
-        - The 7th-ranked (last interviewed) firm's ratings differ from MBIS's mainly in specialized experience
-          (it received "exceptional"; MBIS did not).
-        - MBIS's historic-preservation example appears only as a brief high-level mention in its project
-          narrative; other SF330 sections are outside what the synopsis lets evaluators consider.
-        - The board did review MBIS's resumes; the Section G matrix showed limited prior teaming among key staff.
-        - Higher-rated firms submitted more relevant past performance and had additional qualitative strengths.
-        - Pausing the selection delays a $200M A/E vehicle the district needs for its program.
+    No price evaluation (qualifications-based selection). 16 SF330 qualification statements received (Aug 21, 2025).
 
-  - id: agency_report
-    tag: apo
-    available_from_turn: 2
-    text: |
-      Agency report (protected version) includes: board evaluation worksheets, consensus ratings for all firms,
-      selection board chairman's declaration, and the SF330s.
-      Record shows: the DBB weakness is recorded as "no traditional DBB new construction vertical facility project";
-      the 7th-ranked firm's principal advantage over MBIS is an "exceptional" specialized-experience rating;
-      MBIS's historic-preservation reference is a one-line mention; resumes were reviewed and strengths noted;
-      higher-ranked firms' past performance included more projects of similar size/scope.
+    Evaluation criteria, descending importance: (1) specialized experience and technical competence,
 
+    (2) professional qualifications, (3) past performance, (4) capacity, (5) knowledge of locality.
+
+    Adjectival ratings: exceptional, above average, average, marginal, unacceptable (neutral for past performance).
+
+    Small business participation and DoD contract volume are tie-breakers only.
+
+    The synopsis limits evaluators to specified sections of the SF330 for each criterion.
+
+    Published Q&A responses are incorporated into the solicitation. Neither the synopsis nor the Q&A
+
+    states a preference for any particular project delivery method or project type.
+
+    '
+- id: debrief
+  tag: debrief
+  text: "March 5, 2026: MBIS (joint venture of Michael Baker International and Stantec) notified it will no longer\n\
+    be considered. MBIS ranked 10th of 16; the seven most highly qualified firms were selected for interviews.\n\
+    MBIS ratings/weaknesses communicated at debriefing:\n  - Specialized experience: weakness for lacking a traditional\
+    \ design-bid-build (DBB) new-construction\n    vertical facility project; weakness for lacking a historic preservation\
+    \ project.\n  - Professional qualifications: weakness based on the SF330 Section G team matrix (team history).\n\
+    \  - Past performance: \"above average\" (MBIS believes it merits \"exceptional\").\n  - Capacity: \"above average\"\
+    \ (MBIS believes it merits \"exceptional\").\nMBIS filed an agency-level protest with the Corps; the Corps denied\
+    \ it on July 2, 2026.\n"
+- id: protester_context
+  tag: private_protester
+  text: 'MBIS is not an incumbent (new multiple-award vehicle). Being selected for interviews is required to be
+
+    considered for one of ~5 awards (~$40M expected capacity per seat). Deadline to file at GAO is ~10 days
+
+    after the agency-level denial.
+
+    '
+- id: agency_internal
+  tag: agency_internal
+  text: "Internal view of the record (agency only):\n  - The board's DBB weakness reflected evaluators' view that\
+    \ DBB vertical construction experience is\n    important for this program; this preference does not appear in\
+    \ the synopsis or Q&A text.\n  - The 7th-ranked (last interviewed) firm's ratings differ from MBIS's mainly\
+    \ in specialized experience\n    (it received \"exceptional\"; MBIS did not).\n  - MBIS's historic-preservation\
+    \ example appears only as a brief high-level mention in its project\n    narrative; other SF330 sections are\
+    \ outside what the synopsis lets evaluators consider.\n  - The board did review MBIS's resumes; the Section\
+    \ G matrix showed limited prior teaming among key staff.\n  - Higher-rated firms submitted more relevant past\
+    \ performance and had additional qualitative strengths.\n  - Pausing the selection delays a $200M A/E vehicle\
+    \ the district needs for its program.\n"
+- id: agency_report
+  tag: apo
+  available_from_turn: 2
+  text: 'Agency report (protected version) includes: board evaluation worksheets, consensus ratings for all firms,
+
+    selection board chairman''s declaration, and the SF330s.
+
+    Record shows: the DBB weakness is recorded as "no traditional DBB new construction vertical facility project";
+
+    the 7th-ranked firm''s principal advantage over MBIS is an "exceptional" specialized-experience rating;
+
+    MBIS''s historic-preservation reference is a one-line mention; resumes were reviewed and strengths noted;
+
+    higher-ranked firms'' past performance included more projects of similar size/scope.
+
+    '
+filed_grounds:
+- id: dbb_unstated_criterion
+  name: The board applied an unstated evaluation criterion by assessing a weakness for lacking a traditional design-bid-build
+    new-construction vertical facility project.
+- id: historic_preservation
+  name: The board unreasonably assessed a weakness for lacking a historic preservation project.
+- id: professional_qualifications_matrix
+  name: The board unreasonably assessed a professional-qualifications weakness based on the SF330 Section G team
+    matrix instead of the resumes.
+- id: past_performance_disparate_treatment
+  name: The past performance evaluation was unreasonable and treated offerors disparately; MBIS merited an exceptional
+    rating.
+- id: capacity_rating
+  name: The capacity rating was unreasonable; MBIS merited an exceptional rating.
 parameters:
   V_contract_per_seat: 40000000
-  profit_margin: 0.10
+  profit_margin: 0.1
   P_win_recompete: 0.27
   incumbent: 0
   incumbent_daily_margin: 5000
@@ -77,4 +98,5 @@ parameters:
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000
-  corrective_action_cost: 100000
+  corrective_action_cost: 250000
+  corrective_action_days: 90

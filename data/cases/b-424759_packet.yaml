@@ -63,18 +63,27 @@ documents:
     been exercised. The contracting officer stated that he did not evaluate the pricing for the option to extend
     services when the order was awarded to Symbiosis. The agency maintained that the termination was a proper contract
     administration decision.'
+filed_grounds:
+- id: g1
+  name: The agency improperly terminated an option it had previously exercised under Symbiosis' purchase order.
+- id: g2
+  name: EDG is not complying with the limitation on subcontracting requirements applicable to its IDIQ contract.
+- id: g3
+  name: The entity actually performing the ambulance services under EDG's contract may lack the required licensing
+    and regulatory authority in Los Angeles County.
 parameters:
   profit_margin: 0.1
   P_win_recompete: 0.33
   incumbent_daily_margin: 5000
   stay_days_expected: 100
-  protester_legal_cost: 250000
-  legal_cost_early: 60000
+  protester_legal_cost: 100000
+  legal_cost_early: 30000
   relationship_cost: 40000
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000
-  corrective_action_cost: 100000
+  corrective_action_cost: 250000
+  corrective_action_days: 90
   V_contract_per_seat: 20000000
   incumbent: 1
 meta:

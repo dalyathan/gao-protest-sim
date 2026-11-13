@@ -80,6 +80,21 @@ documents:
     organizational reporting, and did not address SCI and SAP access in its hiring approach. The Navy also argues
     the scenario schedule was unrealistic and that the protester''s proposal described the program manager performing
     tasks the PWS assigned to supervision.'
+filed_grounds:
+- id: g1
+  name: The Navy unreasonably assessed significant weaknesses under the security staffing approach subfactor, including
+    its ACSO staffing, organizational structure and reporting, pre-vetted staff deployment, and security manager
+    resume, and applied unstated criteria.
+- id: g2
+  name: The Navy unreasonably found the general services scenario response unrealistic, arbitrarily and without
+    adequate documentation.
+- id: g3
+  name: The Navy unreasonably assessed a significant weakness under the security technical approach subfactor by
+    reading the proposal's description of the security support program manager's duties as direct work rather than
+    supervision.
+- id: g4
+  name: The Navy unreasonably evaluated the IT factor and the best-value tradeoff, and the agency's evaluation was
+    otherwise flawed.
 parameters:
   profit_margin: 0.1
   P_win_recompete: 0.33
@@ -91,7 +106,8 @@ parameters:
   agency_delay_cost_per_day: 10000
   agency_public_loss: 300000
   cost_reimbursement: 250000
-  corrective_action_cost: 100000
+  corrective_action_cost: 250000
+  corrective_action_days: 90
   V_contract_per_seat: 185344992.0
   incumbent: 0
 meta:
