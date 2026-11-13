@@ -44,3 +44,34 @@ protester_legal_cost / legal_cost_early, relationship_cost, ca_share_of_relief (
 
 ## Sources
 - Pillsbury, Jenner & Block, Crowell & Moring, Fox Rothschild summaries of the FY2025 report (Dec 2025).
+
+## Prior work and what we take from it (researched 2026-11-12)
+1. **Agent-based model calibration** (economics, ecology). Simulated minimum distance / method of
+   simulated moments: choose summary statistics, tune parameters to minimise the distance between
+   simulated and real statistics. Platt (2019, arXiv 1902.05938) finds Bayesian estimation (incl. ABC)
+   consistently beats objective-function approaches. Surrogates (Gaussian-process / Bayesian
+   optimisation) cut the number of expensive runs. Warning: in a 41-model comparison about half of
+   ABMs had at least one unidentifiable parameter (Carrella, "No free lunch").
+   -> Use ABC (keep every parameter setting that fits, not one "best"), and few free parameters.
+2. **Law & economics structural estimation.** Waldfogel structurally estimated Priest-Klein on judge
+   data (decision standard, stake asymmetry, uncertainty) from trial rates and plaintiff win rates;
+   Siegelman & Waldfogel (1999) extend it. Same structure as ours: filing/merits/sustain rates identify
+   a few behavioural parameters; published decisions are a *selected* sample.
+3. **Inverse RL / inverse game theory.** Recover rewards from observed behaviour. Core result: it is
+   ill-posed; many reward functions explain the same equilibrium (Freihaut & Ramponi, NeurIPS 2025).
+   -> 3 target rates cannot pin down 7+ cost parameters. Fix most from outside evidence.
+4. **LLM-agent simulations.** Calibrate a layer mapping agent outputs to population metrics and
+   validate with strict temporal holdout (LLM social digital twins, arXiv 2601.06111); calibrate LLM
+   "archetypes" against observed data (arXiv 2409.10568). Warning: LLM behaviour may reflect training
+   data rather than the prompt's incentives (arXiv 2311.06330).
+
+## Revised method
+0. **Responsiveness check first:** vary one scorecard number (e.g. agency delay cost) and confirm the
+   LLM agents' choices move the right way. If agents ignore the numbers, calibrating them is pointless;
+   calibrate a behavioural knob instead (e.g. an explicit "agency backs down when P(sustain) > t").
+1. Fix from outside evidence: legal costs, contract values, re-evaluation days.
+2. Free parameters (2-3): agency corrective-action propensity (delay cost or threshold t),
+   protester filing threshold, relationship cost.
+3. ABC: coarse grid (~20-30 settings) x calibration pool, Haiku agents; accept settings whose
+   relief rate, merits share and sustain rate fall within tolerance of FY2021-25 (excl. FY2023).
+4. Report the accepted range; freeze its centre; run the 66-case test once.
