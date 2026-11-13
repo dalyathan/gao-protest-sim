@@ -1,0 +1,689 @@
+{
+ "frozen_at": "2026-11-13T02:05:00.322254Z",
+ "rule": "Decisions dated 2026-08-01 or later; Sonnet/Opus/Haiku 5.5 reliable knowledge cutoff Jun 2026. Outcomes must not be inspected or used for tuning before the single pre-registered test run.",
+ "tier_A_post_cutoff": [
+  {
+   "file": "888137.txt",
+   "date": "2026-08-03",
+   "matter": "Core Government Services Corporation",
+   "b": "B-424491",
+   "sha256": "5cc965539ca796bcc31b5c571b9c8c131ce12fccffabb7d3e00cbf30d0219741"
+  },
+  {
+   "file": "888209.txt",
+   "date": "2026-08-05",
+   "matter": "Praescient Analytics, LLC",
+   "b": "B-424521; B-424521.2",
+   "sha256": "95ef51fcc5360895de4a5ff7771ad40404de05dba38a0093ab7dec849c8bdffc"
+  },
+  {
+   "file": "888269.txt",
+   "date": "2026-08-05",
+   "matter": "Accura Engineering and Consulting Services, Inc.--Costs--Reconsiderati",
+   "b": "B-424049.5",
+   "sha256": "0c95f618d5b85149fec982e68b41ac69a6eee3a2046b145e743102a054f08321"
+  },
+  {
+   "file": "888294.txt",
+   "date": "2026-08-11",
+   "matter": "Intelligence Consulting Enterprise Solutions, Inc.",
+   "b": "B-424433.3; B-424433.7",
+   "sha256": "037c99ed8c642db196836ca8e7d329ce4223206088a869b269b905e2c4924f7b"
+  },
+  {
+   "file": "888356.txt",
+   "date": "2026-08-13",
+   "matter": "Oready, LLC",
+   "b": "B-424540",
+   "sha256": "f4a6b0d0ae91635f860d9054af9a1a4e7500b533641f88f761b2c90bc036efce"
+  },
+  {
+   "file": "888430.txt",
+   "date": "2026-08-17",
+   "matter": "Wepa Commercial Cleaning, LLC",
+   "b": "B-424129.2",
+   "sha256": "1797e12666e784675790e1bab3990398cc2d580c67e1d0a1380d81bee335addd"
+  },
+  {
+   "file": "888439.txt",
+   "date": "2026-08-17",
+   "matter": "Davos Francois",
+   "b": "B-424592",
+   "sha256": "8cfbc473d44787f4508eca2bd233f4eda206f70526d89bd7a71b26c645f3980e"
+  },
+  {
+   "file": "888540.txt",
+   "date": "2026-08-14",
+   "matter": "LJR Solutions, LLC",
+   "b": "B-424487",
+   "sha256": "865d99eda46896e8d22b6ed2b28a57c2d6512918e7c8bba9a78bb661f137a823"
+  },
+  {
+   "file": "888544-2.txt",
+   "date": "2026-08-21",
+   "matter": "Phoenix International Holdings, Inc.",
+   "b": "B-424348.2",
+   "sha256": "629ffbc18668f040d288d8efbdede663f44f75e7c7c3feeca9819df2771e1c86"
+  },
+  {
+   "file": "888551.txt",
+   "date": "2026-08-13",
+   "matter": "Integrity Management Consulting, Inc.",
+   "b": "B-424490",
+   "sha256": "88417c43cd54155f8cd7904b7c2fec31eebd84e5c4fbc2c94c4a960d339305c9"
+  },
+  {
+   "file": "888634.txt",
+   "date": "2026-08-26",
+   "matter": "Hair By Allure, LLC d/b/a Allure Rejuvenation Center",
+   "b": "B-424563",
+   "sha256": "d569476f86676580fff94204362f5f31d147f080d70ada818a44cf8709fb62b0"
+  },
+  {
+   "file": "888636.txt",
+   "date": "2026-08-24",
+   "matter": "ShorePoint, LLC",
+   "b": "B-424200.2; B-424200.3",
+   "sha256": "99fea5c66f40dfd71553b055d2e67984d6c42e68edb48afa59e5dcc2b95a5498"
+  },
+  {
+   "file": "888641-2.txt",
+   "date": "2026-08-12",
+   "matter": "C.H. Guernsey & Company",
+   "b": "B-424484; B-424484.2",
+   "sha256": "119340b4b1d36796dd9ee74ca4de33218c1945d8bfb84a3ae0627afb4b2a6a8d"
+  },
+  {
+   "file": "889571.txt",
+   "date": "2026-08-07",
+   "matter": "LOGMET LLC",
+   "b": "B-424477; B-424477.2",
+   "sha256": "14c29ae784ad40338afc5c5f9991fa0a2f8b4abce34473f3d8da3726ea38e7c3"
+  },
+  {
+   "file": "889586.txt",
+   "date": "2026-08-21",
+   "matter": "FCN Inc.",
+   "b": "B-424695",
+   "sha256": "7a00654ebc9e15a813372e52685c89eca7474720325142cbfe702912a7794a5a"
+  },
+  {
+   "file": "889626-2.txt",
+   "date": "2026-08-27",
+   "matter": "GSI Pacific, Inc.",
+   "b": "B-424511.3; B-424511.4",
+   "sha256": "352de8cbce3503f6ce11dd704280462ad948a00ac7dc61234ac79a7c700ee41a"
+  },
+  {
+   "file": "889667.txt",
+   "date": "2026-08-31",
+   "matter": "Aim for AdVantage, LLC",
+   "b": "B-424433.23",
+   "sha256": "64ea0c3521f6ae4679906443571c05338f5b0633a7f15576a05635fa413473e3"
+  },
+  {
+   "file": "889681.txt",
+   "date": "2026-08-11",
+   "matter": "TechSur Solutions, LLC",
+   "b": "B-423812.3; B-423812.4",
+   "sha256": "f7b12d2c3c20ff8359d32d2f71fb88dda3f5d369d96f577a45262c38cb217fb7"
+  },
+  {
+   "file": "889723.txt",
+   "date": "2026-09-01",
+   "matter": "Viderity Inc.--Costs",
+   "b": "B-424422.5",
+   "sha256": "285b1b230becdaa52a076d96424de45f6c8a28c2d91b6d9aef9d4f9dc49d3d12"
+  },
+  {
+   "file": "889782.txt",
+   "date": "2026-08-27",
+   "matter": "Hardwire LLC",
+   "b": "B-424524",
+   "sha256": "2c1ac9f298b72b570663d2e72621af3fd0c6a1fddafb270a09d6fa608ae7bef4"
+  },
+  {
+   "file": "889790.txt",
+   "date": "2026-08-24",
+   "matter": "QinetiQ Inc.",
+   "b": "B-424110.4; B-424110.5",
+   "sha256": "00a621c6f8d9928b29047e2f398062ca1c3ce80472efdc5280fcc0b4fa43e987"
+  },
+  {
+   "file": "889794-2.txt",
+   "date": "2026-08-24",
+   "matter": "MirrorWeb Limited",
+   "b": "B-424554; B-424554.2",
+   "sha256": "5cb5074f65ab298752df6afbe3b0af47e10bc0bd5afbdbaf11f3c82752956fbc"
+  },
+  {
+   "file": "889820.txt",
+   "date": "2026-08-31",
+   "matter": "DLH, LLC",
+   "b": "B-424528; B-424528.2; B-424528.3",
+   "sha256": "ec1c8537d710fb45f6d76590ea0c028c76329c75404b124cb2cd7d96ba0f54f4"
+  },
+  {
+   "file": "889856.txt",
+   "date": "2026-09-03",
+   "matter": "Ares Enterprise, LLC",
+   "b": "B-424548; B-424548.2; B-424548.3",
+   "sha256": "52104b8366714c117b096290523c566a2c9836e70abd0eb8bac343ec7f3a08fc"
+  },
+  {
+   "file": "889878.txt",
+   "date": "2026-08-27",
+   "matter": "FusionEdge Solutions, LLC",
+   "b": "B-423829.2; B-423829.7",
+   "sha256": "2cd8dabe079405b43e46e16f5a435eab6f27449bc320cecaf306c39deec3f5a7"
+  },
+  {
+   "file": "889881.txt",
+   "date": "2026-08-27",
+   "matter": "Red Cedar Harmonia, LLC",
+   "b": "B-423829.3; B-423829.5",
+   "sha256": "a6036a5b7237bfe1742edab28d74df0d45c328157050af337f549a90e72ab130"
+  },
+  {
+   "file": "889887.txt",
+   "date": "2026-09-09",
+   "matter": "E-Logic, Inc.",
+   "b": "B-424566; B-424566.2",
+   "sha256": "771b70e3f5833afc926c54441bf46a256a7f7afd519f17a87c5ccf7c1e930aaa"
+  },
+  {
+   "file": "889897.txt",
+   "date": "2026-09-10",
+   "matter": "Oready, LLC",
+   "b": "B-424508.2; B-424509.2; B-424510.2",
+   "sha256": "dd873ee8d9b3cd81a8457a2711618d8c23cc3c98da89d866218cf3eb011d8c9a"
+  },
+  {
+   "file": "889989.txt",
+   "date": "2026-09-14",
+   "matter": "H2L Solutions, Inc.",
+   "b": "B-424610",
+   "sha256": "08da350960c053f87b62e17a92918c0be7f6bec7d7f058a7c8e4e8cddd9f100d"
+  },
+  {
+   "file": "889993.txt",
+   "date": "2026-09-14",
+   "matter": "Sensis Inc.",
+   "b": "B-424694.7",
+   "sha256": "7a145f61a567eee55e23347cd4647cb9d5508fb7cd031c264d23701aa13e566f"
+  },
+  {
+   "file": "890113.txt",
+   "date": "2026-08-28",
+   "matter": "CSA Global LLC d/b/a Client Solution Architects The decision issued on",
+   "b": "B-423877.4",
+   "sha256": "a735fd9ce508f1102d8a71f0ee55122573bb76cc7a91ae12e43bc7aa1b965a35"
+  },
+  {
+   "file": "890143.txt",
+   "date": "2026-09-17",
+   "matter": "SkyMate, Inc.",
+   "b": "B-424591.2",
+   "sha256": "661d75c2666b5fc3900dff79b9e6a51bc65c4d9c70a92f22bf1aae7a4f43e975"
+  },
+  {
+   "file": "890145.txt",
+   "date": "2026-09-17",
+   "matter": "VESEQU, LLC",
+   "b": "B-424606.3",
+   "sha256": "f368ed934c56c7daec45b5842648c3bbed42462884dcc03c3dd35ca06aeb3bce"
+  },
+  {
+   "file": "890154.txt",
+   "date": "2026-09-17",
+   "matter": "B&N Capital Suppliers, d/b/a B&N Inspection",
+   "b": "B-424214.6",
+   "sha256": "6454cbd3b24ac09091e4dea06bc1b39a5e250cd1dcbdc7a7b295d5fc3454aac4"
+  },
+  {
+   "file": "890156.txt",
+   "date": "2026-09-15",
+   "matter": "MEPT/FCP Patriots Plaza, LLC",
+   "b": "B-424581; B-424581.2",
+   "sha256": "222b94e18df60e18214c46ebbc58df1db1096c23b9307295483b9f894e4ac3f3"
+  },
+  {
+   "file": "890240.txt",
+   "date": "2026-09-08",
+   "matter": "Amentum Services, Inc.",
+   "b": "B-424562; B-424562.2",
+   "sha256": "38f3ada2f5a9d1eae77ac9b25d17b4d701b2b2b26994e00d0d8d513d1f7544ee"
+  },
+  {
+   "file": "890242.txt",
+   "date": "2026-09-10",
+   "matter": "Battelle Memorial Institute",
+   "b": "B-424575; B-424575.2",
+   "sha256": "7692cbce347a1dab9864c4e1014cb2dde7e32a5043a303d2e0ce4df63f581051"
+  },
+  {
+   "file": "890246.txt",
+   "date": "2026-08-19",
+   "matter": "EG Management Services, Inc.",
+   "b": "B-423243.3",
+   "sha256": "9aa057bf857331f269a160eb36462afbb26ecbb6f2df19ca668efafd43aba190"
+  },
+  {
+   "file": "890248.txt",
+   "date": "2026-09-14",
+   "matter": "INTECON LLC",
+   "b": "B-424573; B-424573.2",
+   "sha256": "8f5d05938cb6331c0ceac943335454d7fea97cbc91c4927d822ef48bf552e860"
+  },
+  {
+   "file": "890293.txt",
+   "date": "2026-09-18",
+   "matter": "Acacia Center for Justice",
+   "b": "B-424162.4",
+   "sha256": "04d905512b383cacf6151a145f36534ed09ea6eff2dc8d46cb48ce02a6fda737"
+  },
+  {
+   "file": "890295.txt",
+   "date": "2026-09-21",
+   "matter": "A.B. Martin Services, Inc.",
+   "b": "B-424616",
+   "sha256": "6963248da66201a59bebf4f9643c399c0c9dfce0944d0af7cd38785ca277fab6"
+  },
+  {
+   "file": "890335.txt",
+   "date": "2026-09-09",
+   "matter": "VGS Infrastructure Services, Inc.",
+   "b": "B-424543; B-424543.3",
+   "sha256": "02e925c70256b40e0829fd13501f5b6ba9b52ef4969bd1ec5fb3d39f297d97b4"
+  },
+  {
+   "file": "890337.txt",
+   "date": "2026-09-09",
+   "matter": "Weston Solutions, Inc.",
+   "b": "B-424543.2",
+   "sha256": "a11d94a246fee010d99a4a8ae59a51254a5e2a0340bb0370d033ff6b3171747c"
+  },
+  {
+   "file": "890391.txt",
+   "date": "2026-09-04",
+   "matter": "SOLPAC Construction, Inc., d/b/a Soltek Pacific Construction Company; ",
+   "b": "B-424537; B-424537.3; B-424537.6",
+   "sha256": "6aa14f04d08addbf0425de68fe085616790b1ed06506b6fea6052e607a637959"
+  },
+  {
+   "file": "890418.txt",
+   "date": "2026-09-17",
+   "matter": "Patriot Contract Services, LLC",
+   "b": "B-424516.2; B-424516.3",
+   "sha256": "f0df4c9e08d4fea7a1fefc6c4b179f0a7da3800708c20474e65ea1ee44de9551"
+  },
+  {
+   "file": "890454.txt",
+   "date": "2026-09-14",
+   "matter": "iWorks Corporation",
+   "b": "B-424555; B-424555.2; B-424555.3",
+   "sha256": "c4e6bf93f302f9bbf87268f3c566789f36199d7cf9d61f26900c479815ece99d"
+  },
+  {
+   "file": "890506.txt",
+   "date": "2026-09-17",
+   "matter": "Tryfacta, Inc.",
+   "b": "B-424600; B-424600.2",
+   "sha256": "e0f9ff69a3dfc0116d158bd212a04c6674e8af5be5ed46c996aceffefade47cb"
+  },
+  {
+   "file": "890508.txt",
+   "date": "2026-09-28",
+   "matter": "Cinteot, Inc.",
+   "b": "B-424433.18",
+   "sha256": "a7dfdb9764f37a65f9e474af8521574abcc478f047a867ffd1a4e82162c5268d"
+  },
+  {
+   "file": "890618.txt",
+   "date": "2026-09-04",
+   "matter": "CESC Mall LLC",
+   "b": "B-424560; B-424560.2",
+   "sha256": "a830880f09b72bdc782283bff64d744b92d7f211daaacd2b064dc4b8385119af"
+  },
+  {
+   "file": "890649.txt",
+   "date": "2026-09-30",
+   "matter": "Mission Analytics, LLC",
+   "b": "B-424631",
+   "sha256": "854555e72bd79a1b5400eedf3351a8a15b9834cf2354b66c7a89db740bea52b5"
+  },
+  {
+   "file": "890651.txt",
+   "date": "2026-09-22",
+   "matter": "Advantix Engineering, Corp.",
+   "b": "B-424657",
+   "sha256": "afad7451eb697ad137e5768efdd11faafea3aad64ad689dc947bbc2edc67c7c7"
+  },
+  {
+   "file": "890653.txt",
+   "date": "2026-09-22",
+   "matter": "Keta Environmental and Infrastructure, LLC",
+   "b": "B-424583; B-424583.2; B-424583.3",
+   "sha256": "382a784c1b78667590c11a4b2b8f5aef7709d264f2d0789fb6c8ccff7c6033be"
+  },
+  {
+   "file": "890700.txt",
+   "date": "2026-10-01",
+   "matter": "Hendall Inc.",
+   "b": "B-423714.5",
+   "sha256": "4bb9e9653b9441ab683df620d7c71c212d3cff17d617f2d72e5c9ac1eab53715"
+  },
+  {
+   "file": "890702.txt",
+   "date": "2026-09-21",
+   "matter": "Kearney & Company, P.C.; NextGen Federal Systems LLC; Integral Federal",
+   "b": "B-424433.14; B-424433.16; B-424433.17; B-424433.20; B-424433.21; B-424433.25",
+   "sha256": "9c682f8f6a8503c227c74390674f2d71d4d44274748224adec2c45e864e76c9a"
+  },
+  {
+   "file": "890711.txt",
+   "date": "2026-09-22",
+   "matter": "Tetra Tech, Inc.",
+   "b": "B-424146.2; B-424146.3",
+   "sha256": "a7cf60808f6f9c32eb03cc3f156a05f24e03399ac903711bef2ccdb5144f1f20"
+  },
+  {
+   "file": "890806.txt",
+   "date": "2026-09-24",
+   "matter": "Turning Point Global Solutions, L.L.C.",
+   "b": "B-424612; B-424612.2; B-424612.3",
+   "sha256": "09fe2bb1adf16562bc047d3de66eb41b2e7e46be260351d3ed1869ca3847394b"
+  },
+  {
+   "file": "890861.txt",
+   "date": "2026-09-25",
+   "matter": "Peterson\u2019s LLC",
+   "b": "B-424599; B-424599.2",
+   "sha256": "ddfe061f11c780705270726302931adf9680ab9ca83d1fb224ec7b794c90e964"
+  },
+  {
+   "file": "890864.txt",
+   "date": "2026-10-07",
+   "matter": "Asset Protection & Security Services, L.P.",
+   "b": "B-424568.3",
+   "sha256": "c94c6b1b0b133f8481cf8f7491d3b3186cde34ac20eba219c8a3c08f88c45e71"
+  },
+  {
+   "file": "890865.txt",
+   "date": "2026-10-05",
+   "matter": "Aero Simulation, Inc.",
+   "b": "B-424444.2",
+   "sha256": "84d6d34872cf9188776c1ee2b9912fd1101bbcfc807e104f279e695b0985ea71"
+  },
+  {
+   "file": "890867-2.txt",
+   "date": "2026-10-07",
+   "matter": "RFD Beaufort, Inc.",
+   "b": "B-424661; B-424661.2",
+   "sha256": "7b5e6c467d45d02f08aecc7c7fb211c1f178a72929d1fbd6ba25bb2546d10047"
+  },
+  {
+   "file": "890907.txt",
+   "date": "2026-10-09",
+   "matter": "Cashel Strategic, LLC--Reconsideration",
+   "b": "B-424245.3",
+   "sha256": "c8b7fee0392e0e164875b3852305a742f0552c325c3dae38a1be1f35cf4506ac"
+  },
+  {
+   "file": "890909.txt",
+   "date": "2026-09-09",
+   "matter": "Secise, LLC; Don Selvy Enterprises, Inc.",
+   "b": "B-424214.3; B-424214.4; B-424214.5; B-424214.7",
+   "sha256": "8002388b6742cc80f3ce12d008d00c05e7ecf82d474cbb43afd3e7833e352eb0"
+  },
+  {
+   "file": "890967.txt",
+   "date": "2026-10-13",
+   "matter": "Sterling Readiness Rounds, LLC--Reconsideration",
+   "b": "B-424607.2",
+   "sha256": "f6ab1c6bbae39faebe6ee269faa6ec17f61ddb9679a9969e056d343033c41146"
+  },
+  {
+   "file": "891082.txt",
+   "date": "2026-09-28",
+   "matter": "Coulson Aviation (USA) Inc.",
+   "b": "B-424598; B-424598.2",
+   "sha256": "1bcb148b5df3f7c3a2d33f5c24563a88d68c83bb081981a8c6c0ee5b25d171b1"
+  },
+  {
+   "file": "891135.txt",
+   "date": "2026-10-19",
+   "matter": "Prestique, Inc.",
+   "b": "B-424724",
+   "sha256": "943ef1e6f768d0198e1c497e41ead10f7611f36022d473206ca20d271870d108"
+  },
+  {
+   "file": "891141.txt",
+   "date": "2026-10-19",
+   "matter": "CAKAR ULUSLARARASI NAKLIYAT SANAYI VE TICARET LIMITED SIRKETI",
+   "b": "B-424435.3",
+   "sha256": "80bc322f71d1cf35992af9ec3086514b7e7aa511f286b6fd35d5103e7d1368c6"
+  },
+  {
+   "file": "891143.txt",
+   "date": "2026-10-01",
+   "matter": "Integrity Management Consulting, Inc.",
+   "b": "B-424613; B-424613.2",
+   "sha256": "4ebb99449acdae2cad3d8d9cbf236cc5f855e8e54c8983f543c4763e166942f4"
+  },
+  {
+   "file": "891210.txt",
+   "date": "2026-10-13",
+   "matter": "Fluor Federal Solutions, LLC",
+   "b": "B-424203.2",
+   "sha256": "954f6c83ca1bec9c8e3bc94f5b3692c96d7fcc4be87cca38c19c17fcaa552ef5"
+  },
+  {
+   "file": "891212.txt",
+   "date": "2026-10-13",
+   "matter": "Reliance Test & Technology",
+   "b": "B-424203.3; B-424203.4",
+   "sha256": "69650ccf2b350c2d9be44d83de19a30205242f83bec008aad0e9734e48337dc4"
+  },
+  {
+   "file": "891217.txt",
+   "date": "2026-10-19",
+   "matter": "Encon Desbuild JV4, LLC",
+   "b": "B-423574.2",
+   "sha256": "08921eac799ea3f833f0e6efb19a00653e4fa31e3bfc3b8db579f029a7222dd0"
+  },
+  {
+   "file": "891220.txt",
+   "date": "2026-10-19",
+   "matter": "The MIL Corporation",
+   "b": "B-424664; B-424664.2",
+   "sha256": "6cc21f007164c846a103a1b870989350ae3f5fac28ee42bbdc0be42676175b6d"
+  },
+  {
+   "file": "891280.txt",
+   "date": "2026-10-20",
+   "matter": "Kenall-Geo Engineering JV LLC",
+   "b": "B-424680; B-424680.3",
+   "sha256": "718cdc2268e0b6f5cb4e6246212e4fcfb2ec35cadce69e12fe2c6906af3bb7a7"
+  },
+  {
+   "file": "891309.txt",
+   "date": "2026-10-27",
+   "matter": "SAVE THE AMERICAN COMMUNITIES LLC--Reconsideration",
+   "b": "B-424642.3",
+   "sha256": "ad967f6eb706a260fa16a1bad274b5495a5723bfff8b08820ca33bceb9cd5278"
+  },
+  {
+   "file": "891429.txt",
+   "date": "2026-10-27",
+   "matter": "NDCHealth Corporation (d/b/a RelayHealth)",
+   "b": "B-424672",
+   "sha256": "bd760f0955b649758d5c257b67b794300d4e14c415bf4ccf5cfba1bc2761180c"
+  },
+  {
+   "file": "891508.txt",
+   "date": "2026-10-30",
+   "matter": "Guardian Construction, Inc.",
+   "b": "B-424757; B-424757.2",
+   "sha256": "db8e6c7c65ce1f3793485ad091e007cb55e5ce1465918197c6a7fdd25c5d9916"
+  },
+  {
+   "file": "891534.txt",
+   "date": "2026-11-09",
+   "matter": "Castro & Company, LLC",
+   "b": "B-424145.2",
+   "sha256": "45e0e8198da501736001773ba363de3080223078cd1c08be49c67059aab1a1a5"
+  },
+  {
+   "file": "891536.txt",
+   "date": "2026-11-09",
+   "matter": "SkyMate, Inc.--Reconsideration",
+   "b": "B-424591.3",
+   "sha256": "79c017bc942f263f97b69d3e05e40730645409d19bcbb623714dd2a02a99fcbb"
+  }
+ ],
+ "tier_B_sonnet45_only": [
+  {
+   "file": "888134.txt",
+   "date": "2026-07-27",
+   "matter": "MAGPRO Alliance, JV",
+   "b": "B-424328.2",
+   "sha256": "acc965434d16f8546cfac300a8ad6d3ac0731f77d9544becd7a3d6520bddf50b"
+  },
+  {
+   "file": "888180.txt",
+   "date": "2026-07-22",
+   "matter": "Veros Real Estate Solutions, LLC",
+   "b": "B-423965.2; B-423965.3; B-423965.4",
+   "sha256": "e5f8cb36874ea6e423896e3e38c80f3e406e8479cae438677de233df13608832"
+  },
+  {
+   "file": "888183.txt",
+   "date": "2026-07-24",
+   "matter": "ProteQ",
+   "b": "B-424419.2",
+   "sha256": "11babc653603bfc879ef32f157f84d07195d49ec54b84ae7a8553228383b073b"
+  },
+  {
+   "file": "888264.txt",
+   "date": "2026-07-29",
+   "matter": "DCS Corporation",
+   "b": "B-423820.6",
+   "sha256": "b82d38da3fc11a5ebf963a3b10e1b5cdb212b1dbd4331caae48aa481dd5442fe"
+  },
+  {
+   "file": "888326.txt",
+   "date": "2026-07-17",
+   "matter": "Wilson 5 Service Company, Inc.",
+   "b": "B-424429",
+   "sha256": "50ef3d38a37823658069343472d71a409cc639b2d08aba2f8ad7d7adf4aea5e8"
+  },
+  {
+   "file": "888487.txt",
+   "date": "2026-07-02",
+   "matter": "Ideal Innovations, Inc.",
+   "b": "B-423954.2",
+   "sha256": "c9f99caec8d29433ee664c35e03872dd8d8359bce3bbe5f4fc6d57d79904d7ac"
+  },
+  {
+   "file": "888610.txt",
+   "date": "2026-07-31",
+   "matter": "DAS Federal, LLC",
+   "b": "B-424464; B-424464.2; B-424464.3",
+   "sha256": "43dedc4cada43429d66e2a403cecd6e6cd07399e95ca3af2254cb38c15b296c0"
+  },
+  {
+   "file": "889725.txt",
+   "date": "2026-06-08",
+   "matter": "Patriot Contract Services, LLC",
+   "b": "B-424396; B-424396.2",
+   "sha256": "fefc12ced729a99087b7100264424a500556024f09e3267cf532c2f268120fdd"
+  },
+  {
+   "file": "889754.txt",
+   "date": "2026-07-29",
+   "matter": "Jazz Solutions, Inc.",
+   "b": "B-424440; B-424440.2",
+   "sha256": "9fca449a9eba37e272fb95cfeb63e9413aff73f6492adbe6316a3d32b0b7b0fb"
+  },
+  {
+   "file": "889799.txt",
+   "date": "2026-07-31",
+   "matter": "Aero Simulation, Inc.",
+   "b": "B-424444",
+   "sha256": "c99587d71a85bf504b6ba2de7483f8285fe3da2fee96280dc008e02c78ddf7eb"
+  }
+ ],
+ "merits_test_set": {
+  "rule": "Tier A protests only. Excluded by type (costs requests, reconsiderations) or because the facts section still contains GAO-voice conclusions (we find/we conclude). Exclusion decided from decision type and facts text only, never from outcomes.",
+  "n": 66,
+  "cases": [
+   "B-424491",
+   "B-424521; B-424521.2",
+   "B-424433.3; B-424433.7",
+   "B-424540",
+   "B-424129.2",
+   "B-424592",
+   "B-424487",
+   "B-424348.2",
+   "B-424490",
+   "B-424563",
+   "B-424200.2; B-424200.3",
+   "B-424484; B-424484.2",
+   "B-424477; B-424477.2",
+   "B-424695",
+   "B-424511.3; B-424511.4",
+   "B-424433.23",
+   "B-423812.3; B-423812.4",
+   "B-424524",
+   "B-424110.4; B-424110.5",
+   "B-424554; B-424554.2",
+   "B-424528; B-424528.2; B-424528.3",
+   "B-424548; B-424548.2; B-424548.3",
+   "B-423829.2; B-423829.7",
+   "B-423829.3; B-423829.5",
+   "B-424566; B-424566.2",
+   "B-424610",
+   "B-424694.7",
+   "B-423877.4",
+   "B-424214.6",
+   "B-424581; B-424581.2",
+   "B-424562; B-424562.2",
+   "B-424575; B-424575.2",
+   "B-423243.3",
+   "B-424573; B-424573.2",
+   "B-424162.4",
+   "B-424616",
+   "B-424543; B-424543.3",
+   "B-424543.2",
+   "B-424537; B-424537.3; B-424537.6",
+   "B-424516.2; B-424516.3",
+   "B-424555; B-424555.2; B-424555.3",
+   "B-424600; B-424600.2",
+   "B-424433.18",
+   "B-424560; B-424560.2",
+   "B-424631",
+   "B-424657",
+   "B-423714.5",
+   "B-424433.14; B-424433.16; B-424433.17; B-424433.20; B-424433.21; B-424433.25",
+   "B-424146.2; B-424146.3",
+   "B-424612; B-424612.2; B-424612.3",
+   "B-424599; B-424599.2",
+   "B-424568.3",
+   "B-424661; B-424661.2",
+   "B-424214.3; B-424214.4; B-424214.5; B-424214.7",
+   "B-424598; B-424598.2",
+   "B-424724",
+   "B-424435.3",
+   "B-424613; B-424613.2",
+   "B-424203.2",
+   "B-424203.3; B-424203.4",
+   "B-423574.2",
+   "B-424664; B-424664.2",
+   "B-424680; B-424680.3",
+   "B-424672",
+   "B-424757; B-424757.2",
+   "B-424145.2"
+  ]
+ }
+}
