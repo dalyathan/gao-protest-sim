@@ -28,6 +28,7 @@ for f in sorted(glob.glob(str(ROOT / "runs" / "B-*.json"))):
         "agency_p": round(p_any(a_ps), 2) if a_ps else None,
         "rulings": L["result"].get("rulings", {}), "actual_rulings": actual.get("grounds", {}),
         "per_ground": (L.get("score") or {}).get("per_ground"),
+        "mode": L.get("mode", "game"),
         "tokens": L["usage"]["input_tokens"] + L["usage"]["output_tokens"],
         "agency_reason": next((x.get("raw", "") for x in L["turns"] if x.get("task") == "AGENCY_T2"), ""),
     })
@@ -50,15 +51,18 @@ print(f"Agency backed down (CA):    {len(ca)}/{len(filed)} filed games  (real pu
 print(f"'Protester won anything':   {won_match}/{n} match reality")
 # Per-ground agreement is only meaningful for games played with the real filed grounds
 # (--fixed-grounds / --real-path); free-play grounds are counsel's own and are not compared.
-pg = [g for r in rows if isinstance(r["per_ground"], list) for g in r["per_ground"] if g["match"] is not None]
 print(f"Games reaching GAO ruling:  {len(decided)}/{n}")
-if pg:
-    print(f"Per-ground (fixed grounds): exact {sum(g['match'] for g in pg)}/{len(pg)};  "
+for mode in sorted({r["mode"] for r in rows}):
+    pg = [g for r in rows if r["mode"] == mode and isinstance(r["per_ground"], list)
+          for g in r["per_ground"] if g["match"] is not None]
+    if not pg:
+        print(f"[{mode}] per-ground: no fixed-grounds runs (free-play grounds are not comparable)")
+        continue
+    real_s = [g for g in pg if g["actual"] == "sustained"]
+    print(f"[{mode}] per-ground: exact {sum(g['match'] for g in pg)}/{len(pg)};  "
           f"sustain-vs-not {sum(g['sustain_match'] for g in pg)}/{len(pg)};  "
-          f"real sustains caught {sum(g['sim']=='sustained' for g in pg if g['actual']=='sustained')}/"
-          f"{sum(g['actual']=='sustained' for g in pg)}")
-else:
-    print("Per-ground: no fixed-grounds games yet (free-play grounds are not comparable)")
+          f"real sustains caught {sum(g['sim'] == 'sustained' for g in real_s)}/{len(real_s)};  "
+          f"baseline 'always denied' {sum(g['actual'] != 'sustained' for g in pg)}/{len(pg)}")
 print(f"Tokens: {sum(r['tokens'] for r in rows):,} total, ~{sum(r['tokens'] for r in rows)//max(n,1):,}/game")
 
 print("\nWhy agencies backed down (first 2 examples):")

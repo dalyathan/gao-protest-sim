@@ -91,3 +91,11 @@ SIM_BACKEND=cli SIM_CLI_MODEL=opus bash run_all.sh
 Every call runs in an empty temp folder with all tools off, `--safe-mode`, and no saved
 session, so agents can't read project files (including observer-only outcomes) or each
 other. Usage counts against your plan's limits; there is no temperature control.
+
+## Test set workflow (post-cutoff GAO decisions)
+
+1. `python scripts/split_gao_decision.py` — facts-only text vs. answer key (no LLM).
+2. `python scripts/build_test_packets.py --limit 3` then without `--limit` — Haiku 5.5 via `claude -p`
+   builds `data/cases_test/` (facts call never sees the outcome; a separate call writes the observer file).
+3. Re-run dev cases with the fixed code, freeze the system, then `SIM_BACKEND=cli bash run_test.sh` once.
+   It runs the multi-agent game and the single-agent baseline (`python run.py single ...`) on every case.

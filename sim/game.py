@@ -320,6 +320,7 @@ def score(log: dict, case: Case) -> dict:
     c3 = b.get("counsel_t3", {}).get("p_sustain", {}) if isinstance(b.get("counsel_t3", {}).get("p_sustain"), dict) else {}
     ag = b.get("agency", {})
     conf = b.get("gao_confidence", {}) if isinstance(b.get("gao_confidence"), dict) else {}
+    single = b.get("single_p_sustain", {}) if isinstance(b.get("single_p_sustain"), dict) else {}
     rows = []
     for gid, real_r in real.items():
         sim_r = sim["rulings"].get(gid)
@@ -331,7 +332,7 @@ def score(log: dict, case: Case) -> dict:
                      "sustain_match": (sim_r == "sustained") == (real_r == "sustained")
                                       if sim_r in ("sustained", "denied", "dismissed") else None,
                      "p_counsel_t1": c1.get(gid), "p_counsel_t3": _p(c3.get(gid)), "p_agency": _p(ag.get(gid)),
-                     "gao_confidence": _p(conf.get(gid))})
+                     "gao_confidence": _p(conf.get(gid)), "p_single": _p(single.get(gid))})
     out["per_ground"] = rows
     ruled = [r for r in rows if r["match"] is not None]
     out["grounds_ruled"] = len(ruled)

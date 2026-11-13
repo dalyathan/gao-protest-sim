@@ -127,6 +127,7 @@ class MockLLM:
         "GAO_T5": {"rulings": {"g1": "sustained", "g2": "denied"},
                    "overall": "sustained_in_part", "costs_recommended": True,
                    "confidence": {"g1": 0.65, "g2": 0.55}},
+        "SINGLE": {"rulings": {}, "p_sustain": {}},
         "LESSONS": {"lessons": ["Unstated-criteria grounds are strongest when the solicitation is silent."]},
     }
 
@@ -152,6 +153,10 @@ class MockLLM:
         if tag == "COUNSEL_T3" and listed:
             out["keep"], out["drop"] = listed[:2], listed[2:]
             out["p_sustain"] = {g: 0.2 for g in listed}
+        if tag == "SINGLE":
+            gl = re.findall(r"^(\S+?): ", user.split("GROUNDS FILED:")[-1].split("\n\n")[0], re.M)
+            out["rulings"] = {g: ("sustained" if i == 0 else "denied") for i, g in enumerate(gl)}
+            out["p_sustain"] = {g: (0.6 if i == 0 else 0.2) for i, g in enumerate(gl)}
         if tag == "GAO_T5" and ids:
             out["rulings"] = {g: ("sustained" if i == 0 else "denied") for i, g in enumerate(ids)}
             out["confidence"] = {g: 0.6 for g in ids}

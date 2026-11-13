@@ -113,6 +113,29 @@ def cmd_play(a):
                 memory[actor] = (memory.get(actor, "") + "\n" + "\n".join(f"- {n}" for n in notes)).strip()
 
 
+def cmd_single(a):
+    """Single-agent baseline on one or more packets."""
+    from sim.single import run_single
+    llm = make_llm(a.mock)
+    RUNS.mkdir(exist_ok=True)
+    mt = "mock" if a.mock else model_tag()
+    for path in a.cases:
+        case = Case.load(path)
+        tag = f"{case.case_id}_single_{mt}_t{a.temperature}"
+        for r in range(a.repeats):
+            if a.resume and list(RUNS.glob(f"{tag}_*_r{r}.json")):
+                print(f"{case.case_id} [run {r}] already done, skipping")
+                continue
+            log = run_single(case, llm, a.temperature)
+            log["model"] = mt
+            log["score"] = score(log, case)
+            out = RUNS / f"{tag}_{datetime.now().strftime('%Y%m%d-%H%M%S')}_r{r}.json"
+            save(log, out)
+            sc = log["score"]
+            print(f"{case.case_id} [run {r}] {log['result']['outcome']} (real: {sc.get('actual_outcome')})  "
+                  f"grounds {sc.get('grounds_exact_match')}/{sc.get('grounds_ruled')}  -> {out.name}")
+
+
 def update_profile(case_id, prof):
     """Running mean of belief profiles across games of one case (missing keys skipped)."""
     path = PROFILES / f"{case_id}.json"
@@ -200,11 +223,17 @@ def main():
                          "uses the packet's filed_grounds when present")
     pl.add_argument("--fixed-grounds", action="store_true",
                     help="counsel argues exactly the packet's filed_grounds (needed for per-ground scoring)")
+    sg = sub.add_parser("single", help="single-agent baseline: one call per case")
+    sg.add_argument("cases", nargs="+")
+    sg.add_argument("--mock", action="store_true")
+    sg.add_argument("--repeats", type=int, default=1)
+    sg.add_argument("--temperature", type=float, default=0.7)
+    sg.add_argument("--no-resume", dest="resume", action="store_false")
     tr = sub.add_parser("train")
     tr.add_argument("--episodes", type=int, default=50000)
     sub.add_parser("compare")
     a = ap.parse_args()
-    {"play": cmd_play, "train": cmd_train, "compare": cmd_compare}[a.cmd](a)
+    {"play": cmd_play, "single": cmd_single, "train": cmd_train, "compare": cmd_compare}[a.cmd](a)
 
 
 if __name__ == "__main__":
