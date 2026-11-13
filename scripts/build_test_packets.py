@@ -119,6 +119,8 @@ def build(stem, llm):
         val = float(val)
     except (TypeError, ValueError):
         val = 20_000_000
+    # Ceilings of big multiple-award vehicles (e.g. $50B) are not what one award is worth to a firm.
+    val = min(val, 1_000_000_000)
     n_off = f.get("n_offerors") if isinstance(f.get("n_offerors"), (int, float)) and f.get("n_offerors") else 4
     head = (f"Agency: {f.get('agency')}\nSolicitation: {f.get('solicitation')}\nProtester: {f.get('protester')}\n"
             f"Awardee: {f.get('awardee')}\nProtest type: {f.get('protest_type')}\n\n")
