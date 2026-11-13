@@ -12,13 +12,11 @@ case, in the right order, and stopping when more questions would not change the 
 - LLM answers are noisy: plain greedy information gain can fail badly (Golovin, Krause & Ray 2010);
   compare against EC2-style noise-robust selection.
 
-## Simplest solutions first (Surafel, 2026-11-13: "the simplest solution can be one question")
-The search space MUST include, and the comparison MUST report:
-0 questions  - base rate ("always denied" / ~14-16% sustain).
-1 question   - the single direct question "Will GAO sustain this ground?" (= single-agent baseline),
-               and the best single question from the bank.
-Longer paths are only kept if they beat these on the check set by more than noise. lambda makes
-extra questions pay for themselves.
+## Keep simple solutions possible (Surafel, 2026-11-13)
+A possibility to keep open, not a requirement: the best answer may turn out to be very short,
+even a single question. So the search space should allow paths of length 0 (base rate) and 1
+(e.g. the direct question "Will GAO sustain this ground?", or the best single question from the
+bank), and the cost per question (lambda) lets short paths win when longer ones add little.
 
 ## Pipeline
 1. Question bank (~60), seeded from GAO doctrine (timeliness, stated criteria, documentation,
