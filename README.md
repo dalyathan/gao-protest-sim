@@ -68,6 +68,12 @@ python scripts/make_blind_cases.py
 Caveat: GAO generally does not publish dismissals or protests resolved by
 corrective action, so published decisions over-represent merits rulings.
 
+## Before the test is frozen (do not skip)
+
+- **Calibrate to GAO annual statistics** — see `docs/CALIBRATION_PLAN.md` (relief ≈ 52% of filed, sustain ≈ 14–16% of merits decisions).
+- Re-run the 8 dev cases with the fixed code.
+- Freeze config + prompts + model, then run `run_test.sh` once.
+
 ## Status
 
 1. [x] Repo, data fetcher, blinding step
